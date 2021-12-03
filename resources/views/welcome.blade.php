@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.header')
 @section('content')
 <html lang="en">
 <head>
@@ -169,9 +169,7 @@
   </div>
 </div>
 @endsection
-<footer>
-@yield('footer')
-</footer>
+  
 </body>
 </html>
 
