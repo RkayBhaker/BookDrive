@@ -5,3 +5,70 @@ $body-bg: #f8fafc;
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+.mainHeaderSection{
+    z-index: 1;
+    background-color: #f1f1f1;
+}
+
+#notificationBtn:hover,
+#calenderBtn:hover,
+#settingBtn:hover,
+#profileBtn:hover,
+#logoutBtn:hover
+{
+    color: #000fe2;
+    cursor: pointer;
+}
+
+.searchBarSection{
+    position: relative;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #979fa0;
+    border-right: none;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00c8e2;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #979fa0;
+    background: #000fe2;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .wrap{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+//   header logo style code
+#headerLogo{
+    color: rgb(15, 1, 139);
+    transition: 0.2s;
+    font-size: xx-large;
+    font-weight: bolder;
+}
