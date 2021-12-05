@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.demo1')
 @section('content')
 <html lang="en">
 <head>
@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
     * {
-    box-sizing:border-box;
+    box-sizing:;
   }
   
   .container {
@@ -88,7 +88,7 @@
    
     <div class="carousel-inner">
       <div class="item active">
-        <img src="img1.jpg" style="width:100%;" >
+        <img src="img1.jpg" class="img-fluid" style="width:100%;" >
       </div>
 
       <div class="item">
