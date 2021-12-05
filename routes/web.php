@@ -21,6 +21,10 @@ Route::get('/header', function(){
     return view('/layouts.header');
 });
 
+Route::get('/BookDrive', function(){
+    return view('/layouts.homeTemp');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
