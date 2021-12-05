@@ -21,8 +21,13 @@ Route::get('/header', function(){
     return view('/layouts.header');
 });
 
+
 Route::get('/BookDrive', function(){
     return view('/layouts.homeTemp');
+});
+
+Route::get('/demo1', function(){
+    return view('/home1');
 });
 
 Auth::routes();
