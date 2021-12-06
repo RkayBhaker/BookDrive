@@ -1,176 +1,161 @@
-@extends('layouts.demo1')
-@section('content')
+@extends('layouts.templateBD')
+
+@section('mainContent')
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-    * {
-    box-sizing:;
-  }
-  
-  .container {
-    padding: 64px;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both
-  }
-  
-  .column-66 {
-    float: left;
-    width: 66.66666%;
-    
-  }
-  
-  .column-33 {
-    float: left;
-    width: 33.33333%;
-    padding: 20px;
-  }
-  
-  .large-font {
-    font-size: 48px;
-  }
-  
-  .xlarge-font {
-    font-size: 64px
-  }
-  
-  .button {
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #04AA6D;
-  }
-  
-  img {
-    display: block;
-    height: auto;
-    max-width: 100%;
-  }
-  
-  @media screen and (max-width: 1000px) {
-    .column-66,
-    .column-33 {
-      width: 100%;
-      text-align: center;
-    }
-    img {
-      margin: auto;
-    }
+  p.card-text{
+    text-align:justify;
   }
 
-  * {
-  box-sizing: border-box;
-}
+  #homeList > li {
+    position: relative;
+  }
+
+  #homeList > li::before{
+    content : '';
+    height : 10px;
+    width : 10px;
+    left : -20px;
+    top : 8px;
+    border-radius : 50%;
+    background : green;
+    position: absolute;
+  }
+  #homeList > li:first-child::after,
+  #homeList > li:nth-child(2)::after{
+    content : '';
+    height : 100%;
+    width : 2px;
+    left : -16px;
+    top : 10px;
+    background : green;
+    position: absolute;
+  }
 
   </style>
   </head>
 <body>
-
-<div class="container"> 
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-   
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="img1.jpg" class="img-fluid" style="width:100%;" >
+  <main class="container">
+    <!-- Carousel Start -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="img1.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img3.jpg" alt="Third slide">
+        </div>
       </div>
-
-      <div class="item">
-        <img src="img2.jpg" style="width:100%;">
-      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- Carousel End -->
     
-      <div class="item">
-        <img src="img3.jpg" style="width:100%;">
+    <!-- Section 1 Start -->
+    <div class="card my-3 border " style="width:auto;">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title text-success">Why To Donate?</h3>
+            <p class="card-text text-body h6">By donating books your old used books you give other unpriviledged student a better opportunity at life and success. Be the cause of literacy & make the difference the world needs.</p>
+            <h6 class="card-title text-primary">Donate Book, Donate Smile!</h6>
+            <button class="btn btn-outline-primary">Donate Now!</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img src="img3.jpg" class="img-fluid" alt="...">
+        </div>
       </div>
     </div>
+    <!-- Section 1 End -->
 
-    
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
+    <!-- Section 2 Start -->
+    <div class="card border my-3" style="max-width: auto;">
+      <div class="card-header text-success h3">
+        What to do?
+      </div>
+      <div class="card-body row">
+        <div class="col-md-6">
+          <div class="card mb-3" style="max-width: auto;">
+            <div class="card-header text-primary fw-bold"><i class="fas fa-bookmark"></i> Steps To Donate</div>
+            <div class="card-body text-primary fw-normal">
+              <ul class="list1" id="homeList" type="none">
+                <li>
+                  Fill Up The Donation Form!
+                </li>
+                <li>
+                  Pack The Books!
+                </li>
+                <li>
+                  Handover To Our Shipper At Your Door-Steps!
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3" style="max-width: auto;">
+            <div class="card-header text-primary fw-bold"><i class="far fa-bookmark"></i> Steps To Issue</div>
+            <div class="card-body text-primary fw-normal">
+              <ul class="list2" id="homeList" type="none">
+                <li>
+                  Search Your Desired Books!
+                </li>
+                <li>
+                  Apply To Issue!
+                </li>
+                <li>
+                  Get The Books Delivered At Your Door-Steps!
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Section 2 End -->
 
+    <!-- Section 3 Start -->
+    <div class="card my-3 border" style="width:auto;">
+      <div class="row g-0">
+        <div class="col-md-5">
+          <img src="img1.jpg" class="img-fluid" alt="...">
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <h3 class="card-title text-success">About Us</h3>
+            <h5 class="text-primary">
+              Our Mission Is To Bridge The Gap Between Unprivileged Students And Education.
+            </h5>
+            <p class="card-text text-body h6 lh-base">
+              Project created by Students of IBM Adance Diploma Course. The objective of this project is to create a portal which allows users to donate their old books for the unprivileged student and those books could be issued to those students in need, free of cost.
+            </p>
+            <button class="btn btn-outline-primary">More About Us!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Section 3 End -->
 
-<div class="container">
-  <div class="row">
-    <div class="column-66">
-      <h1 class="large-font"><b>Why To Donate?</b></h1>
-      <h1 class="medium-font" style="color:MediumSeaGreen;"><b>Donate Book, Donate Smile!</b></h1>
-      <p><span style="font-size:20px">By donating books your old used books you give other unpriviledged student a better opportunity at life and success. Be the cause of literacy & make the difference the world needs.</span></p>
-      <button class="button">Donate Now!</button>
-    </div>
-    <div class="column-33">
-        <img src="img3.jpg" width="335" height="471">
-    </div>
-  </div>
-</div>
-
-<div class="container" style="background-color:#f1f1f1">
-    <div class="column-66">
-      <h1 class="large-font"><b>What to do?</b></h1>
-      <div class="container">
-  <div class="row">
-    <div class="col">
-    <h1 class="large-font" style="color:red;"><b>Steps To Donate</b></h1>
-    <span style="font-size:20px"><ol class="list-group list-group-numbered">
-  <li>Fill Up The Donation Form!</li>
-  <li>Pack The Books!</li>
-  <li>Handover To Our Shipper At Your Door-Steps!</li>
-</ol></span>
-    </div>
-    <div class="col">
-    <h1 class="large-font" style="color:blue;"><b>Steps To Issue</b></h1>
-    <span style="font-size:20px"><ol class="list-group list-group-numbered">
-  <li>Search Your Desired Books!</li>
-  <li>Apply To Issue!</li>
-  <li>Get The Books Delivered At Your Door-Steps!</li>
-</ol></span> 
-    </div>
-  </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="column-66">
-      <h1 class="large-font"><b>About Us</b></h1>
-      <h1 class="medium-font" style="color:MediumSeaGreen;"><b>Our Mission Is To Bridge The Gap Between Unprivileged Students And Education</b></h1>
-      <p><span style="font-size:20px text-align:justify;">Project created by Students of IBM Adance Diploma Course. 
-      The objective of this project is to create a portal which allows users to donate their old books for the 
-      unprivileged student and those books could be issued to those students in need, free of cost. </span></p>
-      <button class="button">More About Us!</button>
-    </div>
-    <div class="column-33">
-        <img src="img1.jpg" width="335" height="471" >
-    </div>
-  </div>
-</div>
-@endsection
-  
+  </main>
 </body>
 </html>
-
+@endsection
 
