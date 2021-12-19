@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Website Title Book Drive</title>
+    <title>BookDrive</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -221,9 +221,10 @@
 
         #content {
             width: 100%;
-            padding: 20px;
             min-height: 100vh;
             transition: all 0.3s;
+            padding: 20px;
+}
         }  
 
         /* ---------------------------------------------------
@@ -277,7 +278,69 @@
             #sidebarCollapse span {
                 display: none;
             }
-        }        
+        }      
+        
+        
+        @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+
+
+
+
+.card {
+    background-color: #F8F9FB !important
+}
+
+p {
+    font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
+    display: fkex
+}
+
+h3 {
+    font-size: calc(24px + (30 - 24) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+.social {
+    font-size: 21px !important
+}
+
+.color-text {
+    color: #757575 !important
+}
+
+button {
+    font-size: calc(12px + (13 - 12) * ((100vw - 360px) / (1600 - 320))) !important;
+    padding-left: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-right: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-top: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important;
+    padding-bottom: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+footer {
+    color: #fff;
+}
+
+.Careers {
+    cursor: pointer;
+    color: #1E88E5
+}
+
+.row-1 {
+    background-color: #7386D5; 
+}
+
+.row-2 {
+    background-color: #6d7fcc;
+}
+
+
+
     </style>
 
 </head>
@@ -288,7 +351,7 @@
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Books Drive</h3>
+                <h3>BookDrive</h3>
                 <strong>BD</strong>
             </div>
 
@@ -424,6 +487,64 @@
              });
          });
      </script>
- </body>
+
+
+
+<!--footer-->
+<footer>
+        <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
+            <div class="col-12">
+                <div class="row row-2">
+                    <div class="col-sm-3 text-md-center">
+                        <h5><span> <i class="fas fa-book-open"></i></span><b> BookDrive</b></h5>
+                    </div>
+                    <div class="col-sm-3 my-sm-0 mt-5">
+                        <ul class="list-unstyled">
+                            <li class="mt-0"><a href="aboutus">About Us</a></li>
+                            <li><a href="contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 my-sm-0 mt-5">
+                        <ul class="list-unstyled">
+                            <li class="mt-0"><a href="return">Return Policy</li>
+                            <li><a href="bookcondition">Book Condition<br>
+                                Guidlines</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 my-sm-0 mt-5">
+                        <ul class="list-unstyled">
+                            <li class="mt-0"><a href="privacy">Privacy Policy</a></li>
+                            <li><a href="terms_conds">Terms & Condition </a></li><br>
+                        </ul>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
+            <div class="col-12">
+                <div class="row my-4 row-1 no-gutters">
+                    <div class="col-sm-3 col-auto text-center"><small>
+                    <script>
+                        document.write('&copy;' );
+                        document.write(' 2020 - ');
+                        document.write(new Date().getFullYear());
+                        document.write(' OJT Group44 - All Rights Reserved.');
+                    </script>
+                  </small></div>
+                    <div class="col-md-3 col-auto "></div>
+                    <div class="col-md-3 col-auto"></div>
+                    <div class="col my-auto text-md-left text-right "><small>
+                    <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid " width="25"></span> 
+                    <span><img src="https://i.imgur.com/TtB6MDc.png" class="img-fluid " width="25"></span>
+                    <span><img src="https://www.edigitalagency.com.au/wp-content/uploads/new-instagram-logo-white-border-icon-png-large.png" class="img-fluid " width="25"></span> 
+                </small> </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!--footer end-->
+</body>
  
  </html>
