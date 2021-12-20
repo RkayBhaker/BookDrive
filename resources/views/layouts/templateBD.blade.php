@@ -324,6 +324,16 @@ button:focus {
 
 footer {
     color: #fff;
+    position: relative;
+}
+footer::before{
+    content : '';
+    width : 100%;
+    height : 2px;
+    background-color: #6d7fcc;
+    position: absolute;
+    left : 0;
+    top : 0;
 }
 
 .Careers {
@@ -336,7 +346,8 @@ footer {
 }
 
 .row-2 {
-    background-color: #6d7fcc;
+    color : #6d7fcc;
+    /* background-color: #6d7fcc; */
 }
 
 
@@ -428,10 +439,10 @@ footer {
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Button1</a>
+                    <a href="#" class="download">Button1</a>
                 </li>
                 <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Button2</a>
+                    <a href="#" class="article">Button2</a>
                 </li>
             </ul>
         </nav>
@@ -491,7 +502,7 @@ footer {
 
 
 <!--footer-->
-<footer>
+<footer class="sticky-top">
         <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
             <div class="col-12">
                 <div class="row row-2">
