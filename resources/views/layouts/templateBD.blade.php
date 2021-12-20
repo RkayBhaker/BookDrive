@@ -458,7 +458,7 @@ footer::before{
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="contact">
                     <i class="fas fa-contact"></i>
                     Contact Us
                 </a>
