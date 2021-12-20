@@ -281,10 +281,10 @@ margin-bottom:10px;
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="our-team">
                                     <div class="pic">
-                                        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+                                        <img src="SHUAIB-PIC-1.jpg">
                                     </div>
                                     <div class="team-content">
-                                        <h3 class="title">Shuaib<br><br></h3>
+                                        <h3 class="title">SHUAIB ALI<br><br></h3>
                                         <span class="post">NSTI MUMBAI</span>
                                     </div>
                                 </div>
