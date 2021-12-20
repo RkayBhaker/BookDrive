@@ -450,7 +450,7 @@ footer::before{
                         Donate Us
                     </a>
                 </li>
-<<<<<<< HEAD
+
                 <li>
                 <a href="#">
                     <i class="fas fa-about"></i>
@@ -463,17 +463,7 @@ footer::before{
                     Contact Us
                 </a>
             </li>
-=======
-            </ul>
 
-            <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="#" class="download">Button1</a>
-                </li>
-                <li>
-                    <a href="#" class="article">Button2</a>
-                </li>
->>>>>>> 95b46128d8573d2faa55822d97b4b53abb815b5b
             </ul>
         </nav>
 
