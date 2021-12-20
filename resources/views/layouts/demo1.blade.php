@@ -35,7 +35,7 @@
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <!-- <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-user"></i>
                         Manage Profie
                     </a>
@@ -45,7 +45,7 @@
                         <li><a href="#">Your Order</a></li>
                         <li><a href="#">Settings</a></li>
                     </ul>
-                </li>
+                </li> -->
                 <li>
                     <a href="#getBooksMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-book-open"></i>
@@ -58,17 +58,19 @@
                         <li><a href="#">Academics</a></li>
                         <li><a href="#">Others</a></li>
                     </ul>
-                    <a href="#donateBooksMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-book"></i>
+
+                    
+                    <!-- <a href="#donateBooksMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> -->
+                    <a href="#"><i class="fas fa-book"></i>
                         Donate Books
                     </a>
-                    <ul class="collapse list-unstyled" id="donateBooksMenu">
+                    <!-- <ul class="collapse list-unstyled" id="donateBooksMenu">
                         <li><a href="#">Book 1</a></li>
                         <li><a href="#">Book 2</a></li>
                         <li><a href="#">Book 3</a></li>
                         <li><a href="#">Book 4</a></li>
                         <li><a href="#">Book 5</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li>
                     <a href="#EventsWith" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -84,17 +86,17 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#SocialMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-paper-plane"></i>
+                    <!-- <a href="#SocialMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> -->
+                       <a href="#"> <i class="fas fa-paper-plane"></i>
                         Our Pride
                     </a>
-                    <ul class="collapse list-unstyled" id="SocialMenu">
+                    <!-- <ul class="collapse list-unstyled" id="SocialMenu">
                         <li><a href="#"><i class="fas fa-envelope"></i>  E-mail</a></li>
                         <li><a href="#"><i class="fab fa-facebook-f"></i>  Facebook</a></li>
                         <li><a href="#"><i class="fab fa-instagram"></i>  Instagram</a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i>  Twitter</a></li>
                         <li><a href="#"><i class="fab fa-linkedin"></i>  LinkedIn</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
                 <li>
                     <a href="#">
@@ -193,7 +195,7 @@
        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
    
          <h6 class="text-uppercase fw-bold mb-4">
-           <i class="fas fa-gem me-3"></i>BookDrive
+           <i class="fas fa-gem me-4"></i>BookDrive
          </h6>
          <p>
            content.content.content.content.content.content.content.
