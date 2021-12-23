@@ -278,8 +278,7 @@
             #sidebarCollapse span {
                 display: none;
             }
-<<<<<<< HEAD
-        }  
+            }  
               /* User Profile Links */
               .user-profile{
                   font-size: 16px;
@@ -314,7 +313,6 @@
               /* footer{
                   background-color: #6d7fcc;
               } */
-=======
         }      
         
         
@@ -386,10 +384,6 @@ footer::before{
     color : #6d7fcc;
     /* background-color: #6d7fcc; */
 }
-
-
-
->>>>>>> 95b46128d8573d2faa55822d97b4b53abb815b5b
     </style>
 
 </head>
