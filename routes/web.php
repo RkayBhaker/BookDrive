@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -45,6 +49,13 @@ Route::get('/donate', function () {
     return view('donate');
 });
 
+Route::get('/login', function () {
+    return view('layouts.app');
+});
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
+// demo
+Route::get('/userform', [App\Http\Controllers\HomeController::class, 'cart'])->name('userfrom');

@@ -478,23 +478,42 @@ footer::before{
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
+                                @guest
+                                    @if (Route::has('login'))
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    @endif
+                                @else
+                                <li class="nav-item active">
                                 <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
                             </li>
                             <div class="user-dropdown">
                             <li class="nav-item">
-                                <a class="nav-link user-profile" href="#"><i class="fas fa-user"></i></a>
+                                <a class="nav-link user-profile" href="#">
+                                    <i class="fas fa-user"></i>
+                                    {{ Auth::user()->name }}
+                                </a>
                             <div class="user-dropdown-list">
                                <a href="#">Your Profile</a>  
                                <a href="#">Your Donation</a>
                                <a href="#">Your Order</a>
                                <a href="#">Settings</a>
+                               <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </div>    
                             </li>
                             </div>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                                        <!-- <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> -->
+                                        
+                                @endguest
+                                </a>
                             </li>
                         </ul>
                     </div>
