@@ -336,7 +336,7 @@ footer {
 }
 
 .row-2 {
-    background-color: #6d7fcc;
+    background-color: #4e67ca;
 }
 
 

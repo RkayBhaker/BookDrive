@@ -85,7 +85,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <img src="img3.jpg" class="img-fluid" alt="...">
+          <img src="img4.jpg" class="img-fluid" alt="...">
         </div>
       </div>
     </div>
