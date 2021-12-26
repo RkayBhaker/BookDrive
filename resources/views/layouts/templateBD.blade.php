@@ -278,6 +278,41 @@
             #sidebarCollapse span {
                 display: none;
             }
+            }  
+              /* User Profile Links */
+              .user-profile{
+                  font-size: 16px;
+                  border: none;
+              }
+              .user-dropdown{
+                  position: relative;
+                  display: inline-block;
+              }
+              .user-dropdown-list{
+                  display: none;
+                  position: absolute;
+                  background-color: #f1f1f1;
+                  min-width: 160px;
+                  box-shadow: 0px 8px 16px 0px
+                  rgba(0, 0, 0, 0.2);
+                  z-index: 1;
+              }
+              .user-dropdown-list a{
+                  padding: 12px 16px;
+                  text-decoration: none;
+                  display: block;
+              }
+              .user-dropdown-list a:hover{
+                  background-color:#6d7fcc;
+              }
+              .user-dropdown:hover .user-dropdown-list{
+                  display: block;
+              }
+              
+              /* Footer */
+              /* footer{
+                  background-color: #6d7fcc;
+              } */
         }      
         
         
@@ -324,6 +359,16 @@ button:focus {
 
 footer {
     color: #fff;
+    position: relative;
+}
+footer::before{
+    content : '';
+    width : 100%;
+    height : 2px;
+    background-color: #6d7fcc;
+    position: absolute;
+    left : 0;
+    top : 0;
 }
 
 .Careers {
@@ -336,11 +381,13 @@ footer {
 }
 
 .row-2 {
+<<<<<<< HEAD
     background-color: #4e67ca;
+=======
+    color : #6d7fcc;
+    /* background-color: #6d7fcc; */
+>>>>>>> a7835d5020f6ec4f845ccdbf470057ac6c0d556b
 }
-
-
-
     </style>
 
 </head>
@@ -357,16 +404,6 @@ footer {
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-user"></i>
-                        Manage Profie
-                    </a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li><a href="#">Your Profile</a></li>
-                        <li><a href="#">Your Donation</a></li>
-                        <li><a href="#">Your Order</a></li>
-                        <li><a href="#">Settings</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="#getBooksMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -380,17 +417,11 @@ footer {
                         <li><a href="#">Academics</a></li>
                         <li><a href="#">Others</a></li>
                     </ul>
-                    <a href="#donateBooksMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-book"></i>
+            </li>
+                <li>    
+                     <a href="#"><i class="fas fa-book"></i>
                         Donate Books
                     </a>
-                    <ul class="collapse list-unstyled" id="donateBooksMenu">
-                        <li><a href="#">Book 1</a></li>
-                        <li><a href="#">Book 2</a></li>
-                        <li><a href="#">Book 3</a></li>
-                        <li><a href="#">Book 4</a></li>
-                        <li><a href="#">Book 5</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="#EventsWith" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -406,17 +437,10 @@ footer {
                     </ul>
                 </li>
                 <li>
-                    <a href="#SocialMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="#">    
                         <i class="fas fa-paper-plane"></i>
                         Our Pride
                     </a>
-                    <ul class="collapse list-unstyled" id="SocialMenu">
-                        <li><a href="#"><i class="fas fa-envelope"></i>  E-mail</a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f"></i>  Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i>  Instagram</a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i>  Twitter</a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i>  LinkedIn</a></li>
-                    </ul>
                 </li>
                 <li>
                     <a href="#">
@@ -424,15 +448,20 @@ footer {
                         Donate Us
                     </a>
                 </li>
-            </ul>
 
-            <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Button1</a>
-                </li>
-                <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Button2</a>
-                </li>
+                <a href="#">
+                    <i class="fas fa-about"></i>
+                    Our Mission
+                </a>
+            </li>
+            <li>
+                <a href="contact">
+                    <i class="fas fa-contact"></i>
+                    Contact Us
+                </a>
+            </li>
+
             </ul>
         </nav>
 
@@ -446,21 +475,49 @@ footer {
                         <i class="fas fa-align-left"></i>
                         <span>Books Drive</span>
                     </button>
-                    <a href="#" class="nav-link"><i class="fas fa-calendar-alt" ></i></a>
+                   
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
+                                @guest
+                                    @if (Route::has('login'))
+                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    @endif
+                                @else
+                                <li class="nav-item active">
+                                <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
                             </li>
+                            <div class="user-dropdown">
                             <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+                                <a class="nav-link user-profile" href="#">
+                                    <i class="fas fa-user"></i>
+                                    {{ Auth::user()->name }}
+                                </a>
+                            <div class="user-dropdown-list">
+                               <a href="#">Your Profile</a>  
+                               <a href="#">Your Donation</a>
+                               <a href="#">Your Order</a>
+                               <a href="#">Settings</a>
+                               <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>    
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                            </div>
+                                        <!-- <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> -->
+                                        
+                                @endguest
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -472,6 +529,10 @@ footer {
              </main>
         </div>
     </div>
+    
+    <!-- Footer Start -->
+
+    <!-- Footer End -->
 
      <!-- jQuery CDN - Slim version (=without AJAX) -->
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -491,7 +552,7 @@ footer {
 
 
 <!--footer-->
-<footer>
+<footer class="sticky-top">
         <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
             <div class="col-12">
                 <div class="row row-2">

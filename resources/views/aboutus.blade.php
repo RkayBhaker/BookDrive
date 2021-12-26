@@ -157,7 +157,7 @@ margin-bottom:10px;
 }
 .our-team:hover .pic img {
   box-shadow: 0 0 0 14px #f7f5ec;
-  transform: scale(0.7);
+  transform: scale(0.8);
 }
 .our-team .team-content {
   margin-bottom: 30px;
@@ -269,7 +269,7 @@ margin-bottom:10px;
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="our-team">
                                     <div class="pic">
-                                        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+                                        <img src="IMG_20181219_161047.jpg">
                                     </div>
                                     <div class="team-content">
                                         <h3 class="title">Rakesh<br><br></h3>
@@ -281,10 +281,10 @@ margin-bottom:10px;
                             <div class="col-lg-3 col-md-6 col-sm-6">
                                 <div class="our-team">
                                     <div class="pic">
-                                        <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+                                        <img src="SHUAIB-PIC-1.jpg">
                                     </div>
                                     <div class="team-content">
-                                        <h3 class="title">Shuaib<br><br></h3>
+                                        <h3 class="title">SHUAIB ALI<br><br></h3>
                                         <span class="post">NSTI MUMBAI</span>
                                     </div>
                                 </div>

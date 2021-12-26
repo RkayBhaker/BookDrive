@@ -1,5 +1,4 @@
-@extends('layouts.demo1')
-<!-- @section('header') -->
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -22,4 +21,3 @@
     </div>
 </div>
 @endsection
-@section('footer')
