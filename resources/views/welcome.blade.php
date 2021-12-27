@@ -12,6 +12,7 @@
 
   #homeList > li {
     position: relative;
+    color:black;
   }
 
   #homeList > li::before{
@@ -21,8 +22,9 @@
     left : -20px;
     top : 8px;
     border-radius : 50%;
-    background : green;
+    background : #4e67ca;
     position: absolute;
+    color:black;
   }
   #homeList > li:first-child::after,
   #homeList > li:nth-child(2)::after{
@@ -31,8 +33,9 @@
     width : 2px;
     left : -16px;
     top : 10px;
-    background : green;
+    background : #4e67ca;
     position: absolute;
+    color:black;
   }
 
   </style>
@@ -48,7 +51,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="img1.jpg" alt="First slide">
+          <img class="d-block w-100" src="img5.png" alt="First slide">
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="img2.jpg" alt="Second slide">
@@ -73,9 +76,9 @@
       <div class="row g-0">
         <div class="col-md-8">
           <div class="card-body">
-            <h3 class="card-title text-success">Why To Donate?</h3>
+            <h3><span style="color:#4e67ca;">Why To Donate?</span></h3>
             <p class="card-text text-body h6">By donating books your old used books you give other unpriviledged student a better opportunity at life and success. Be the cause of literacy & make the difference the world needs.</p>
-            <h6 class="card-title text-primary">Donate Book, Donate Smile!</h6>
+            <h6>Donate Book, Donate Smile!</h6>
             <button id="Donate_Button" class="btn btn-outline-primary">Donate Now!</button>
             <script type="text/javascript">
               document.getElementById("Donate_Button").onclick = function () {
@@ -94,12 +97,12 @@
     <!-- Section 2 Start -->
     <div class="card border my-3" style="max-width: auto;">
       <div class="card-header text-success h3">
-        What to do?
+        <span style="color:#4e67ca;">What to do?</span>
       </div>
       <div class="card-body row">
         <div class="col-md-6">
           <div class="card mb-3" style="max-width: auto;">
-            <div class="card-header text-primary fw-bold"><i class="fas fa-bookmark"></i> Steps To Donate</div>
+            <div class="card-header text-primary fw-bold"><span style="color:#4e67ca;"><i class="fas fa-bookmark"></i> Steps To Donate<span></div>
             <div class="card-body text-primary fw-normal">
               <ul class="list1" id="homeList" type="none">
                 <li>
@@ -117,7 +120,7 @@
         </div>
         <div class="col-md-6">
           <div class="card mb-3" style="max-width: auto;">
-            <div class="card-header text-primary fw-bold"><i class="far fa-bookmark"></i> Steps To Issue</div>
+            <div class="card-header text-primary fw-bold"><span style="color:#4e67ca;"><i class="fas fa-bookmark"></i> Steps To Issue</span></div>
             <div class="card-body text-primary fw-normal">
               <ul class="list2" id="homeList" type="none">
                 <li>
@@ -141,12 +144,12 @@
     <div class="card my-3 border" style="width:auto;">
       <div class="row g-0">
         <div class="col-md-5">
-          <img src="img1.jpg" class="img-fluid" alt="...">
+          <img src="img10.jpg" class="img-fluid" alt="...">
         </div>
         <div class="col-md-7">
           <div class="card-body">
-            <h3 class="card-title text-success">About Us</h3>
-            <h5 class="text-primary">
+            <h3><span style="color:#4e67ca;">About Us</span></h3>
+            <h5>
               Our Mission Is To Bridge The Gap Between Unprivileged Students And Education.
             </h5>
             <p class="card-text text-body h6 lh-base">

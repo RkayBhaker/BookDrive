@@ -80,9 +80,15 @@
             SIDEBAR STYLE
         ----------------------------------------------------- */
 
+        .btn {
+            background: #4e67ca;
+            color:white;
+
+        }
         .wrapper {
             display: flex;
             align-items: stretch;
+            
         }
 
         #sidebar {
@@ -381,12 +387,8 @@ footer::before{
 }
 
 .row-2 {
-<<<<<<< HEAD
+
     background-color: #4e67ca;
-=======
-    color : #6d7fcc;
-    /* background-color: #6d7fcc; */
->>>>>>> a7835d5020f6ec4f845ccdbf470057ac6c0d556b
 }
     </style>
 
@@ -419,25 +421,18 @@ footer::before{
                     </ul>
             </li>
                 <li>    
-                     <a href="#"><i class="fas fa-book"></i>
+                     <a href="donate"><i class="fas fa-book"></i>
                         Donate Books
                     </a>
                 </li>
                 <li>
-                    <a href="#EventsWith" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="events" >
                         <i class="fas fa-image"></i>
                         Events
                     </a>
-                    <ul class="collapse list-unstyled" id="EventsWith">
-                        <li><a href="#">All Events</a></li>
-                        <li><a href="#">School Events</a></li>
-                        <li><a href="#">College Events</a></li>
-                        <li><a href="#">University Events</a></li>
-                        <li><a href="#">Others Events</a></li>
-                    </ul>
                 </li>
                 <li>
-                    <a href="#">    
+                    <a href="pride">    
                         <i class="fas fa-paper-plane"></i>
                         Our Pride
                     </a>
@@ -448,13 +443,6 @@ footer::before{
                         Donate Us
                     </a>
                 </li>
-
-                <li>
-                <a href="#">
-                    <i class="fas fa-about"></i>
-                    Our Mission
-                </a>
-            </li>
             <li>
                 <a href="contact">
                     <i class="fas fa-contact"></i>
@@ -471,7 +459,7 @@ footer::before{
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <button type="button" id="sidebarCollapse" class="btn">
                         <i class="fas fa-align-left"></i>
                         <span>Books Drive</span>
                     </button>
@@ -588,7 +576,7 @@ footer::before{
                     <div class="col-sm-3 col-auto text-center"><small>
                     <script>
                         document.write('&copy;' );
-                        document.write(' 2020 - ');
+                        document.write(' 2019 - ');
                         document.write(new Date().getFullYear());
                         document.write(' OJT Group44 - All Rights Reserved.');
                     </script>

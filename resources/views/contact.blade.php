@@ -24,7 +24,7 @@
 <section class="mb-4">
 	<div class="contact-form">
     <!--Section heading-->
-    <h1 class="card-title text-success" style="text-align:center;">Contact Us</h1>
+    <h1 style="text-align:center;color:#4e67ca;">Contact Us</h1>
     <!--Section description-->
     <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? 
 		Please do not hesitate to contact us. <br>Our team will come back to you within a matter of hours to help you. 

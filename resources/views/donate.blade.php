@@ -15,6 +15,16 @@
 		padding-right: 200px;
 	}
 
+    .error
+{
+  color: red;
+  size: 80%
+}
+.hidden
+{
+  display:none;
+}
+
 </style>
 </head>
 <body>
@@ -23,9 +33,9 @@
 <section class="mb-4">
 	<div class="contact-form">
     <!--Section heading-->
-    <h1 class="card-title text-success" style="text-align:center;">Donate Book</h1>
+    <h1 style="text-align:center; color:#4e67ca;">Donate Book</h1>
     <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">Donate Book, Donate Smile.
+    <p class="text-center w-responsive mx-auto mb-5" style="color:black;">Donate Book, Donate Smile.
 </div>
     <div class="row">
 
@@ -64,7 +74,7 @@
                     <div class="col-md-6">
                         <div class="md-form mb-0">
 						<label for="name" class="">Mobile Number</label>
-                            <input type="text" id="number" name="number" class="form-control" placeholder="+91"><br>
+                            <input type="text" id="number" name="number" class="form-control" placeholder="+91" maxlength="10" minlength="10" required><br>
                         </div>
                     </div>
                     <!--Grid column-->

@@ -49,9 +49,19 @@ Route::get('/donate', function () {
     return view('donate');
 });
 
+Route::get('/events', function () {
+    return view('events');
+});
+
+Route::get('/pride', function () {
+    return view('pride');
+});
+
 Route::get('/login', function () {
     return view('layouts.app');
 });
+
+
 
 Auth::routes();
 
