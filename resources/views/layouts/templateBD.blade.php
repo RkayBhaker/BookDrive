@@ -495,7 +495,7 @@ footer::before{
                                     {{ Auth::user()->name }}
                                 </a>
                             <div class="user-dropdown-list">
-                               <a href="#">Your Profile</a>  
+                               <a href="/userProfile">Your Profile</a>  
                                <a href="#">Your Donation</a>
                                <a href="#">Your Order</a>
                                <a href="#">Settings</a>

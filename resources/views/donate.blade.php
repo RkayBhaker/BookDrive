@@ -27,12 +27,19 @@
     <!--Section description-->
     <p class="text-center w-responsive mx-auto mb-5">Donate Book, Donate Smile.
 </div>
+
+    @if(session('success'))
+        <div class="alert alert-success" role="alert">
+            {{session('success')}}
+        </div>
+    @endif
+
     <div class="row">
 
         <!--Grid column-->
         <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form" action="#" method="POST">
-
+            <form id="contact-form" name="contact-form" action="{{ Route('donar.details') }}" method="POST">
+                @csrf
                 <!--Grid row-->
                 <div class="row">
 
@@ -40,7 +47,12 @@
                     <div class="col-md-6">
                         <div class="md-form mb-0">
 						<label for="name" class="">First Name</label>
-                            <input type="text" id="fname" name="fname" class="form-control"><br>
+                            <input type="text" id="fname" value="{{ Auth::user()->name }}" name="fname" class="form-control" placeholder="First Name" ><br>
+                                @error('fname')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                         </div>
                     </div>
                     <!--Grid column-->
@@ -48,8 +60,14 @@
                     <!--Grid column-->
                     <div class="col-md-6">
                         <div class="md-form mb-0">
-                        <label for="name" class="">Last Name</label>
-                            <input type="text" id="lname" name="lname" class="form-control"><br>
+                            <label for="name" class="">Last Name</label>
+                            <input type="text" id="lname" name="lname" class="form-control" placeholder="Last Name" ><br>
+                            
+                                @error('lname')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                             
                         </div>
                     </div>
@@ -64,7 +82,14 @@
                     <div class="col-md-6">
                         <div class="md-form mb-0">
 						<label for="name" class="">Mobile Number</label>
-                            <input type="text" id="number" name="number" class="form-control" placeholder="+91"><br>
+                            <input type="text" id="number" name="phNo" class="form-control" placeholder="+91"><br>
+                            
+                                @error('phNo')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            
                         </div>
                     </div>
                     <!--Grid column-->
@@ -73,7 +98,14 @@
                     <div class="col-md-6">
                         <div class="md-form mb-0">
                         <label for="name" class="">Email ID</label>
-                            <input type="text" id="email" name="email" class="form-control" placeholder=".com"><br>
+                            <input type="text" id="email" name="email" class="form-control" placeholder="abc@xyz.com"><br>
+                            
+                                @error('email')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            
                         </div>
                     </div>
                     <!--Grid column-->
@@ -86,7 +118,14 @@
                     <div class="col-md-12">
                         <div class="md-form mb-0">
 							<label for="subject" class="">Address</label>
-                            <input type="text" id="address" name="address" class="form-control"><br>    
+                            <input type="text" id="address" name="address" class="form-control" placeholder="Full Address" ><br>    
+                            
+                                @error('address')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            
                         </div>
                     </div>
                 </div>
@@ -95,52 +134,61 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="md-form mb-0">
-                <label for="donor" class="radio-inline">Donor Type</label>  <br>
-                </div>
+                            <label for="donor" class="radio-inline">Donor Type</label>  <br>
+                        </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-3">
                         <div class="md-form mb-0">
-                  <input type="radio" value="optradio"> Indiviual 
+                            <input type="radio" name="donorType" value="Indiviual"> Indiviual 
                         </div>
                     </div>
               
                     <div class="col-md-3">
                         <div class="md-form mb-0">
-                  <input type="radio" value="optradio"> School
-                  </div>
+                            <input type="radio" name="donorType" value="School"> School
+                        </div>
                     </div>
 
-                  <div class="col-md-3">
+                    <div class="col-md-3">
                         <div class="md-form mb-0">
-                  <input type="radio" value="optradio"> Organization
-                  </div>
+                            <input type="radio" name="donorType" value="Organization"> Organization
+                        </div>
                     </div>
 
-                  <div class="col-md-3">
+                    <div class="col-md-3">
                         <div class="md-form mb-0">
-                  <input type="radio" value="optradio"> Other
-                                    </div>
-                    </div>
-
+                            <input type="radio" name="donorType" value="Other"> Other
                         </div>
                     </div>
                 </div>
                   <br>
+                  
+                                @error('donorType')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                  
                 <!--Grid row-->
                 <div class="row">
 
                     <!--Grid column-->
                     <div class="col-md-9">
-
                         <div class="md-form">
 							<label for="message">Book Condition</label>
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="..."></textarea>
+                            <br>
+                            
+                                @error('message')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            
                         </div>
-
                     </div>
                 </div>
                 <!--Grid row-->
@@ -150,14 +198,23 @@
                     <!--Grid column-->
                     <div class="col-md-5">
                         <div class="md-form mb-0">
-						<label for="name" class="">Book Category</label>
-            <select class="form-control" id="sel1">
-                            <option>NCERT</option>
-                            <option>CBSE</option>
-                            <option>ICSE</option>
-                            <option>Academic</option>
-                            <option>Others</option>
-            </select><br>
+                            <label for="name" class="">Book Category</label>
+                            <select class="form-control" id="sel1" name="bookCategory">
+                                <option value="N/A">Select Category</option>
+                                <option value="NCERT">NCERT</option>
+                                <option value="CBSE">CBSE</option>
+                                <option value="ICSE">ICSE</option>
+                                <option value="Academic">Academic</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            <br>
+                            
+                                @error('bookCategory')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                            
                         </div>
                     </div>
                     <!--Grid column-->
@@ -166,8 +223,12 @@
                     <div class="col-md-4">
                         <div class="md-form mb-0">
                         <label for="name" class="">Number of Books</label>
-                            <input type="text" id="lname" name="lname" class="form-control"><br>
-                            
+                            <input type="text" id="noOfBook" name="noOfBook" class="form-control" placeholder="Total no. of books" >
+                                @error('noOfBook')
+                                    <div class="alert alert-warning" role="alert">
+                                        {{$message}}
+                                    </div>
+                                @enderror
                         </div>
                     </div>
                     <!--Grid column-->
@@ -176,12 +237,12 @@
                 <!--Grid row-->
 
             <div class="text-center text-md-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
+            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
             </div>
-            </form>
+    </form>
         <!--Grid column-->
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -198,7 +259,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
         
     </div>
 
