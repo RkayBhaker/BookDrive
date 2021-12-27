@@ -17,17 +17,10 @@
     padding: 0 0 11px;
     position: relative;
     text-transform: uppercase;
-    color: green;
+    color: #4e67ca;
+    align:center;
 }
-.aboutus-title::after {
-    background: #fdb801 none repeat scroll 0 0;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    left: 0;
-    position: absolute;
-    width: 200px;
-}
+
 .aboutus-text {
     color: black;
     font-size: 30px;
@@ -97,12 +90,8 @@ margin-bottom:10px;
   text-align: center;
   overflow: hidden;
   position: relative;
-  border-bottom: 5px solid #00325a;
+  border-bottom: 5px solid #4e67ca;
 }
-.our-team:hover {
-  border-bottom: 5px solid #2f2f2f;
-}
-
 .our-team .pic {
   display: inline-block;
   width: 130px;
@@ -116,7 +105,7 @@ margin-bottom:10px;
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #00325a;
+  background: #4e67ca;
   position: absolute;
   bottom: 135%;
   right: 0;
@@ -127,7 +116,7 @@ margin-bottom:10px;
 }
 .our-team:hover .pic:before {
   height: 100%;
-  background: #2f2f2f;
+  background: #4e67ca;
 }
 .our-team .pic:after {
   content: "";
@@ -227,7 +216,7 @@ margin-bottom:10px;
 
     <div class="container">
     <div class="row blog">
-        <h1 class="center mx-auto text-center py-4" style="color:green;">Our Team Members</h1>
+        <h1 class="center mx-auto text-center py-4" style="color:#4e67ca;">Our Team Members</h1>
        <p style="color:black; margin-left:200px; margin-right:200px;"> We are different. We were raised in various towns, in different families, we love different food. 
            But we have a thing that is common. Our Passion for work and learning new everyday. We are a team, and also a family.</p>
 	   <div class="col-md-12">
@@ -249,7 +238,7 @@ margin-bottom:10px;
                                         <img src="photo.jpg">
                                     </div>
                                     <div class="team-content">
-                                        <h3 class="title" style="font-size:10px;">Pooja Hatankar</h3>
+                                        <h3 class="title" style="font-size:10px;">Pooja <br> Hatankar</h3>
                                         <span class="post">NSTI MUMBAI</span>
                                     </div>
                                 </div>

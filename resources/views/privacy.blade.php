@@ -11,7 +11,7 @@
 }
 
 .title{
-    color:green;
+    color:#4e67ca;
     font-family:Times New Roman;
     text-align:center;
 }

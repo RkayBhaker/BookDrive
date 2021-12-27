@@ -49,9 +49,18 @@ Route::get('/donate', function () {
     return view('donate');
 });
 
+Route::get('/events', function () {
+    return view('events');
+});
+
+Route::get('/pride', function () {
+    return view('pride');
+});
+
 Route::get('/login', function () {
     return view('layouts.app');
 });
+
 
 Route::get('/userProfile', function () {
     return view('userProfile');
@@ -65,6 +74,7 @@ Route::post('/donate', [App\Http\Controllers\donarController::class, 'donarDetai
 
 // Update User Details
 Route::post('/UpdateUser', [App\Http\Controllers\updateUserController::class, 'updateUser'])->name('updateUser.details');
+
 
 Auth::routes();
 
