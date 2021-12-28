@@ -38,6 +38,10 @@
     color:black;
   }
 
+  .button{
+    width:180px;
+  }
+
   </style>
   </head>
 <body>
@@ -79,7 +83,7 @@
             <h3><span style="color:#4e67ca;">Why To Donate?</span></h3>
             <p class="card-text text-body h6">By donating books your old used books you give other unpriviledged student a better opportunity at life and success. Be the cause of literacy & make the difference the world needs.</p>
             <h6>Donate Book, Donate Smile!</h6>
-            <button id="Donate_Button" class="btn btn-outline-primary">Donate Now!</button>
+            <button id="Donate_Button" class="button">Donate Now!</button>
             <script type="text/javascript">
               document.getElementById("Donate_Button").onclick = function () {
               location.href = "donate";
@@ -155,7 +159,7 @@
             <p class="card-text text-body h6 lh-base">
               Project created by Students of IBM Adance Diploma Course. The objective of this project is to create a portal which allows users to donate their old books for the unprivileged student and those books could be issued to those students in need, free of cost.
             </p>
-            <button class="btn btn-outline-primary"><a href="aboutus">More About Us!</a></button>
+            <button class="button"><a href="aboutus">More About Us!</a></button>
           </div>
         </div>
       </div>
