@@ -96,6 +96,8 @@ Route::post('/donate', [App\Http\Controllers\donarController::class, 'donarDetai
 // Update User Details
 Route::post('/UpdateUser', [App\Http\Controllers\updateUserController::class, 'updateUser'])->name('updateUser.details');
 
+// Issue book form
+Route::post('/issueBook', [App\Http\Controllers\issueBookController::class, 'issueBook'])->name('issuebook.form');
 
 Auth::routes();
 

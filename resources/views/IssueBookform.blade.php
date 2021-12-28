@@ -56,29 +56,39 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <p class="text-center w-responsive mx-auto mb-5 text-secondary">Get Book & Keep Growing with Us and your Knowledge.
 </div>
     <div class="row">
-
+    @if(session('success'))
+        <div class="alert alert-success" role="alert">
+            {{session('success')}}
+        </div>
+    @endif
         <!--Grid column-->
         <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form" action="/action.php" method="POST">
-
+            <form id="contact-form" action="{{ Route('issuebook.form') }}" method="POST">
+                @csrf
                 <!--Grid row-->
                 <div class="row">
 
 
-                        <!--Grid column-->
-                        <div class="col-md-6">
-                            <div class="md-form mb-0">
-                            <label for="name" class="">Book Category</label>
-                <select class="form-control" id="sel1">
-                    <option value="">Select Category....</option>
-                                <option>NCERT</option>
-                                <option>CBSE</option>
-                                <option>ICSE</option>
-                                <option>MSBTE</option>
-                                <option>Others</option>
-                </select><br>
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <label for="name" class="">Book Category</label>
+                        <select class="form-control" id="sel1" name="bookCategory">
+                            <option >Select Category....</option>
+                                <option value="NCERT">NCERT</option>
+                                <option value="CBSE">CBSE</option>
+                                <option value="ICSE">ICSE</option>
+                                <option value="MSBTE">MSBTE</option>
+                                <option value="Others">Others</option>
+                        </select>
+                        <br>
+                        @error('bookCategory')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
                             </div>
-                        </div>
+                        @enderror
+                    </div>
+                </div>
 
                         <!--Grid column-->
 
@@ -87,21 +97,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
                             <div class="md-form mb-0">
                             <label for="name" class="">Book Set</label>
                            
-                <select class="form-control" id="sel1">
-                 <option value="">Select Standard....</option>
-                                <option>Standard I</option>
-                                <option>Standard II</option>
-                                <option>Standard III</option>
-                                <option>Standard IV</option>
-                                <option>Standard v</option>
-                                <option>Standard VI</option>
-                                <option>Standard VII</option>
-                                <option>Standard VIII</option>
-                                <option>Standard IX</option>
-                                <option>Standard X</option>
-                                <option>Standard XI</option>
-                                <option>Standard XII</option>
-                </select><br>
+                        <select name="bookSet" class="form-control" id="sel1">
+                                <option value="null" >Select Standard....</option>
+                                <option value="Standard I">Standard I</option>
+                                <option value="Standard II">Standard II</option>
+                                <option value="Standard III">Standard III</option>
+                                <option value="Standard IV">Standard IV</option>
+                                <option value="Standard V">Standard v</option>
+                        </select><br>
+                        @error('bookSet')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                             </div>
                         </div>
                 </div>
@@ -112,7 +120,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <div class="col-md-6">
                         <div class="md-form mb-0">
 						<label for="name" class="">First Name</label>
-                            <input type="name" id="firstname" name="fname" placeholder="Fist Name" class="form-control" required><br>
+                            <input type="name" id="firstname" name="fname" placeholder="Fist Name" class="form-control" ><br>
+                            @error('fname')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
                     </div>
                     <!--Grid column-->
@@ -122,7 +135,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <div class="md-form mb-0">
                         <label for="name" class="">Last Name</label>
                             <input type="text" id="lastname" name="lname" placeholder="Last Name" class="form-control"><br>
-                            
+                            @error('lname')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
                     </div>
                     <!--Grid column-->
@@ -136,7 +153,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <div class="col-md-6">
                         <div class="md-form mb-0">
 						<label for="name" class="">Mobile Number</label>
-                            <input type="text" id="number" name="number" class="form-control" placeholder="+91" maxlength="10" minlength="10" required><br>
+                            <input type="text" id="number" name="phno" class="form-control" placeholder="+91" ><br>
+                            @error('phno')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
                     </div>
                     <!--Grid column-->
@@ -145,7 +167,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <div class="col-md-6">
                         <div class="md-form mb-0">
                         <label for="name" class="">Email ID</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder=".com" required><br>
+                            <input type="email" id="email" name="email" class="form-control" placeholder=".com" ><br>
+                            @error('email')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
                     </div>
                     <!--Grid column-->
@@ -159,6 +186,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <div class="md-form mb-0">
 							<label for="subject" class="">Issue Date</label>
                             <input type="date" id="issueDate" name="issuedate" class="form-control"><br>    
+                            @error('issuedate')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
                     </div>
                 <!-- </div> -->
@@ -168,6 +200,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
                         <div class="md-form mb-0">
 							<label for="subject" class="">Return Date</label>
                             <input type="date" id="returnDate" name="returndate" class="form-control"><br>    
+                            @error('returndate')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
                     </div>
                 </div>
@@ -181,8 +218,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
                         <div class="md-form">
 							<label for="message">Address</label>
-                            <textarea type="text" id="localAddress" name="address" rows="2" class="form-control md-textarea" minlength="10"></textarea>
-                
+                            <textarea type="text" id="localAddress" name="address" rows="2" class="form-control md-textarea" minlength="10"></textarea><br>
+                            @error('address')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                         </div>
 
                     </div>
@@ -190,8 +231,18 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <!--Grid row-->
                 <br>
 
-                <input type="checkbox" required><label> I have I have read and agreed to <a href="terms_conds" style="color:blue;">Terms and Condition <i class="fa fa-link icon"></i></a></label><br>
-                <input type="checkbox" required><label> I have read and agreed to <a href="return" style="color:blue;"> Return Policy <i class="fa fa-link icon"></i></a></label>
+                <input type="checkbox" value="agreement signed I" name="agreement_I" ><label> I have I have read and agreed to <a href="terms_conds" style="color:blue;">Terms and Condition <i class="fa fa-link icon"></i></a></label><br>
+                        @error('agreement_I')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
+                <input type="checkbox" value="agreement signed II" name="agreement_II" ><label> I have read and agreed to <a href="return" style="color:blue;"> Return Policy <i class="fa fa-link icon"></i></a></label>
+                        @error('agreement_II')
+                            <div class="alert alert-warning" role="alert">
+                                {{$message}}
+                            </div>
+                        @enderror
                 
 
                     
@@ -199,7 +250,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 
 
             <div class="text-left text-md-center">
-            <button type="button" id="submitBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
             </div>
 
             <!-- <div class="text-left text-md-center">

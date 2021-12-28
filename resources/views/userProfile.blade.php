@@ -131,7 +131,7 @@
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Password</label>
-            <input type="password" name="passwd" value="********" class="form-control" id="password" placeholder="Password">
+            <input type="password" name="passwd" class="form-control" id="password" placeholder="Password">
 
             @error('passwd')
               <div class="alert alert-warning" role="alert">
@@ -149,4 +149,5 @@
     </div>
   </div>
 </div>
+
 @endsection
