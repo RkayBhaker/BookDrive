@@ -15,6 +15,19 @@
 		padding-right: 200px;
 	}
 
+.file {
+  background-color:#4e67ca;
+    border: #4e67ca;
+    border-radius: 8px;
+    color:white;
+}
+
+input[type=file]::file-selector-button {
+  border: 2px solid #4e67ca;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color:  #7386D5;
+}
 
 </style>
 </head>
@@ -80,18 +93,24 @@
 
                         <div class="md-form">
 							<label for="message">Your Message</label>
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                
+                            <textarea type="text" id="message" name="message" rows="3" class="form-control md-textarea"></textarea><br>
+                            
                         </div>
 
                     </div>
                 </div>
-                <!--Grid row-->
+                 <!--Grid row-->
+                 <div class="row">
 
-            </form>
+<!--Grid column-->
+                  <div class="col-md-12">
+                  <div class="md-form">
+                    <label for="message">Upload File</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+</form>
 <br>
-            <div class="text-center text-md-center">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
+            <div class="text-center text-md-center"><br>
+            <button type="button" class="button" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
         <!--Grid column-->
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

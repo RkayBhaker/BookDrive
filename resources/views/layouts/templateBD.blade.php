@@ -359,6 +359,10 @@ button:focus {
     outline-width: 0
 }
 
+button:hover {
+    background-color: #4e67ca;
+}
+
 footer {
     color: #fff;
     position: relative;
@@ -385,6 +389,20 @@ footer::before{
 .row-2 {
 
     background-color: #4e67ca;
+}
+
+.button{
+    background-color:#4e67ca;
+    border: #4e67ca;
+    border-radius: 8px;
+    color:white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width:150px;
+}
+
+.button:hover {
+    background-color:#7386D5;
+    border: #4e67ca;
 }
     </style>
 

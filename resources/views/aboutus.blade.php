@@ -30,7 +30,6 @@
 }
 
 
-
 h1 {
   margin-top: 0;
   font-size: 3rem;
