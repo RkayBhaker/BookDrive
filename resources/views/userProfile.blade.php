@@ -1,23 +1,5 @@
 @extends('layouts.templateBD')
 
-<!-- @if(session('success'))
-    {{session('success')}}
-@endif -->
-
-<!--
-<form action="{{ route('user.image') }}" method="post" enctype="multipart/form-data">
-    @csrf
-
-    <input type="number" name="user_id" id="userId">
-    <input type="file" name="image_name" id="userImage">
-
-    @error('image_name')
-        {{$message}}
-    @enderror
-<br>
-    <input type="submit" value="Upload">
-</form> -->
-
 @section('mainContent')
       @if(session('success'))
         <div class="alert alert-success" role="alert">
@@ -26,7 +8,7 @@
       @endif
     <div class="row border p-3">
         <div class="col-md-4 text-center">
-            <img src="userProfileDummyPic.png" class="img-thumbnail rounded-circle" height="200" width="200" alt="demo">
+            <img id="user_profile_image" src="{{ Auth::user()->image_path }}" class="img-thumbnail rounded" height="250" width="250" alt="demo">
                 <br>
             {{ Auth::user()->name }}
         </div>
@@ -36,7 +18,7 @@
                     Full Name
                 </div>
                 <div class="name">
-                    &nbsp; {{ Auth::user()->name }}
+                    &nbsp; {{ Auth::user()->name }} {{ Auth::user()->lname }}
                 </div>
             </div>
             <div class="py-2">
@@ -66,9 +48,14 @@
                     Password
                 </div>
                 <div class="password">
-                    &nbsp; ********
+                  &nbsp; ********
+                </div>
+             
+                <div>
+                  <a id="password_reset_btn" href="/password/reset">Reset password</a>
                 </div>
             </div>
+            <hr>
             <div class="py-2">
             <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Update Profle</button>
             </div>
@@ -88,7 +75,7 @@
       </div>
 
       <div class="modal-body">
-        <form method="POST" action="{{ route('updateUser.details') }}">
+        <form method="POST" action="{{ route('updateUser.details') }}" enctype="multipart/form-data">
 
           @csrf
 
@@ -105,9 +92,20 @@
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Last Name</label>
-            <input type="text" name="lname" class="form-control" id="last-name" placeholder="Last Name">
+            <input type="text" name="lname" value="{{ Auth::user()->lname }}" class="form-control" id="last-name" placeholder="Last Name">
 
             @error('lname')
+              <div class="alert alert-warning" role="alert">
+                {{$message}}
+              </div>
+            @enderror
+
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Your Profile</label>
+            <input type="file" class="form-control" name="image_name" id="userImage">
+
+            @error('image_name')
               <div class="alert alert-warning" role="alert">
                 {{$message}}
               </div>
@@ -129,16 +127,9 @@
             <label for="recipient-name" class="col-form-label">Email Address</label>
             <input type="email" name="email" class="form-control" id="Email-address" value="{{ Auth::user()->email }}">
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display:none">
             <label for="recipient-name" class="col-form-label">Password</label>
-            <input type="password" name="passwd" class="form-control" id="password" placeholder="Password">
-
-            @error('passwd')
-              <div class="alert alert-warning" role="alert">
-                {{$message}}
-              </div>
-            @enderror
-
+            <input type="password" name="passwd" value="{{ Auth::user()->password }}" class="form-control" id="password" placeholder="Password">
           </div>
       </div>
       <div class="modal-footer">

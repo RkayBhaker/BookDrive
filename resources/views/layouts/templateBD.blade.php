@@ -404,6 +404,21 @@ footer::before{
     background-color:#7386D5;
     border: #4e67ca;
 }
+#password_reset_btn{
+    color: red; font-size: 12px; border: .5px ridge red; padding:5px 10px; border-radius:5px;
+}
+#password_reset_btn:hover{
+    color: green;
+    background-color: rgba(0,0,0,0.04);
+    border: .5px ridge rgba(0,0,0,0.3);
+}
+#user_profile_image{
+    transform:scale(.9);
+    transition: all .5s;
+}
+#user_profile_image:hover{
+    transform:scale(1);
+}
     </style>
 
 </head>
