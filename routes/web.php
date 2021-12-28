@@ -61,6 +61,27 @@ Route::get('/login', function () {
     return view('layouts.app');
 });
 
+Route::get('/IssueNCERTbook', function () {
+    return view('IssueNCERTbook');
+});
+Route::get('/IssueCBSEbook', function () {
+    return view('IssueCBSEbook');
+});
+Route::get('/IssueICSEbook', function () {
+    return view('IssueICSEbook');
+});
+Route::get('/IssueMSBTEbook', function () {
+    return view('IssueMSBTEbook');
+});
+Route::get('/IssueOTHERSbook', function () {
+    return view('IssueOTHERSbook');
+});
+
+Route::get('/IssueBookform', function(){
+    return view('IssueBookform');
+});
+
+
 
 Route::get('/userProfile', function () {
     return view('userProfile');

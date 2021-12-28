@@ -315,10 +315,6 @@
                   display: block;
               }
               
-              /* Footer */
-              /* footer{
-                  background-color: #6d7fcc;
-              } */
         }      
         
         
@@ -400,8 +396,8 @@ footer::before{
         <!-- Sidebar  -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>BookDrive</h3>
-                <strong>BD</strong>
+                <h3><a href="/"> BookDrive</a></h3>
+                <strong><a href="/"> BD</a></strong>
             </div>
 
             <ul class="list-unstyled components">
@@ -413,11 +409,11 @@ footer::before{
                         Get Books
                     </a>
                     <ul class="collapse list-unstyled" id="getBooksMenu">
-                        <li><a href="#">NCERT</a></li>
-                        <li><a href="#">CBSE</a></li>
-                        <li><a href="#">ICSE</a></li>
-                        <li><a href="#">Academics</a></li>
-                        <li><a href="#">Others</a></li>
+                        <li><a href="IssueNCERTbook">NCERT</a></li>
+                        <li><a href="IssueCBSEbook">CBSE</a></li>
+                        <li><a href="IssueICSEbook">ICSE</a></li>
+                        <li><a href="IssueMSBTEbook">MSBTE</a></li>
+                        <li><a href="IssueOTHERSbook">Others</a></li>
                     </ul>
             </li>
                 <li>    
