@@ -16,7 +16,7 @@ class issueBookController extends Controller
             "fname" => "required|min:4",
             "lname" => "min:2",
             "phno" => "required|digits:10",
-            "email" => "required|email|unique:user",
+            "email" => "required|email",
             "issuedate" => "required",
             "returndate" => "required",
             "address" => "required|min:10",
@@ -51,7 +51,7 @@ class issueBookController extends Controller
             "return_date"=> $request->returndate,
             "address"=> $request->address,
             "agreement I"=> $request->agreement_I,
-            "agreement I"=> $request->agreement_II,
+            "agreement II"=> $request->agreement_II,
             "created_at"=> Carbon::now()
         ]);
 
