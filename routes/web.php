@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,7 +81,6 @@ Route::get('/IssueOTHERSbook', function () {
 Route::get('/IssueBookform', function(){
     return view('IssueBookform');
 });
-
 
 
 Route::get('/userProfile', function () {
