@@ -495,7 +495,7 @@ footer::before{
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar_top" >
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn">
@@ -627,15 +627,6 @@ footer::before{
                  $('#sidebar12').toggleClass('active');
              });
          });
-         document.addEventListener("DOMContentLoaded", function(){
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    document.getElementById('navbar_top').classList.add('tempsidebar');
-                } else {
-                    document.getElementById('navbar_top').classList.remove('tempsidebar');
-                } 
-            });
-        });
      </script>
 </body>
  
