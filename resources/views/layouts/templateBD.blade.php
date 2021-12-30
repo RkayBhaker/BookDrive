@@ -483,7 +483,7 @@ footer::before{
                 </li>
             <li>
                 <a href="contact">
-                    <i class="fas fa-contact"></i>
+                    <i class="fas fa-envelope"></i>
                     Contact Us
                 </a>
             </li>

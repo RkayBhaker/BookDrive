@@ -3,7 +3,7 @@
 @section('mainContent')
 <html>
 <head>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
 	<style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -53,7 +53,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <!--Section heading-->
     <h1 style="text-align:center; margin-top: 9%; color:#4e67ca;">Issue Book</h1>
     <!--Section description-->
+<<<<<<< HEAD
+    <p class="text-center w-responsive mx-auto mb-5 text-secondary">Get Books & Keep Growing with Us and your Knowledge.
+</div>
+    <div class="row">
+=======
     <p class="text-center w-responsive mx-auto mb-5 text-secondary">Get Book & Keep Growing with Us and your Knowledge.
+>>>>>>> 9f38b31f9206e21d4b02c103fdcab2a74df30224
     @if(session('success'))
         <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -218,7 +224,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
                         <div class="md-form">
 							<label for="message">Address</label>
-                            <textarea type="text" id="localAddress" name="address" rows="2" class="form-control md-textarea" minlength="10"></textarea><br>
+                            <textarea type="text" placeholder="Address" id="localAddress" name="address" rows="2" class="form-control md-textarea" minlength="10"></textarea><br>
                             @error('address')
                             <div class="alert alert-warning" role="alert">
                                 {{$message}}
