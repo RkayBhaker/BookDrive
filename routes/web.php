@@ -82,10 +82,9 @@ Route::get('/IssueBookform', function(){
 });
 
 
-
 Route::get('/userProfile', function () {
     return view('userProfile');
-})->middleware('auth');
+})->middleware('auth')->middleware('verified');
 
 // Image Route to save image
 Route::post('/image', [App\Http\Controllers\userController::class, 'userImage'])->name('user.image');
@@ -98,6 +97,9 @@ Route::post('/UpdateUser', [App\Http\Controllers\updateUserController::class, 'u
 
 // Issue book form
 Route::post('/issueBook', [App\Http\Controllers\issueBookController::class, 'issueBook'])->name('issuebook.form');
+
+// verify email address
+Auth::routes(['verify' => true]);
 
 Auth::routes();
 

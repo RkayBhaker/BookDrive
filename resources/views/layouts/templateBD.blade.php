@@ -91,6 +91,7 @@
             
         }
 
+        #sidebar12,
         #sidebar {
             min-width: 250px;
             max-width: 250px;
@@ -99,6 +100,7 @@
             transition: all 0.3s;
         }
 
+        #sidebar12.active,
         #sidebar.active {
             min-width: 80px;
             max-width: 80px;
@@ -220,7 +222,7 @@
             background: #6d7fcc !important;
             color: #fff !important;
         }
-
+        
         /* ---------------------------------------------------
             CONTENT STYLE
         ----------------------------------------------------- */
@@ -398,6 +400,7 @@ footer::before{
     color:white;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     width:150px;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -419,6 +422,11 @@ footer::before{
 #user_profile_image:hover{
     transform:scale(1);
 }
+
+.tempsidebar{
+    position: fixed !important;
+    height: 100vh !important;
+}
     </style>
 
 </head>
@@ -427,7 +435,8 @@ footer::before{
 
     <div class="wrapper">
         <!-- Sidebar  -->
-        <nav id="sidebar">
+        
+        <nav id="sidebar" class="tempsidebar" >
             <div class="sidebar-header">
                 <h3><a href="/"> BookDrive</a></h3>
                 <strong><a href="/"> BD</a></strong>
@@ -481,11 +490,12 @@ footer::before{
 
             </ul>
         </nav>
+        <nav id="sidebar12" class=""></nav>
 
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar_top" >
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn">
@@ -544,13 +554,65 @@ footer::before{
              <main>
                  @yield('mainContent')
              </main>
+        
+    
+    
+            <!-- Footer Start -->
+            <footer >
+                <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
+                    <div class="col-12">
+                        <div class="row row-2">
+                            <div class="col-sm-3 text-md-center">
+                                <h5><span> <i class="fas fa-book-open"></i></span><b> BookDrive</b></h5>
+                            </div>
+                            <div class="col-sm-3 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-0"><a href="aboutus">About Us</a></li>
+                                    <li><a href="contact">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-3 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-0"><a href="return">Return Policy</li>
+                                    <li><a href="bookcondition">Book Condition<br>
+                                        Guidlines</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-3 my-sm-0 mt-5">
+                                <ul class="list-unstyled">
+                                    <li class="mt-0"><a href="privacy">Privacy Policy</a></li>
+                                    <li><a href="terms_conds">Terms & Condition </a></li><br>
+                                </ul>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
+                    <div class="col-12">
+                        <div class="row my-4 row-1 no-gutters">
+                            <div class="col-sm-3 col-auto text-center"><small>
+                            <script>
+                                document.write('&copy;' );
+                                document.write(' 2019 - ');
+                                document.write(new Date().getFullYear());
+                                document.write(' OJT Group44 - All Rights Reserved.');
+                            </script>
+                        </small></div>
+                            <div class="col-md-3 col-auto "></div>
+                            <div class="col-md-3 col-auto"></div>
+                            <div class="col my-auto text-md-left text-right "><small>
+                            <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid " width="25"></span> 
+                            <span><img src="https://i.imgur.com/TtB6MDc.png" class="img-fluid " width="25"></span>
+                            <span><img src="https://www.edigitalagency.com.au/wp-content/uploads/new-instagram-logo-white-border-icon-png-large.png" class="img-fluid " width="25"></span> 
+                        </small> </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer End -->
         </div>
     </div>
-    
-    <!-- Footer Start -->
-
-    <!-- Footer End -->
-
      <!-- jQuery CDN - Slim version (=without AJAX) -->
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
      <!-- Popper.JS -->
@@ -562,67 +624,19 @@ footer::before{
          $(document).ready(function () {
              $('#sidebarCollapse').on('click', function () {
                  $('#sidebar').toggleClass('active');
+                 $('#sidebar12').toggleClass('active');
              });
          });
+         document.addEventListener("DOMContentLoaded", function(){
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.getElementById('navbar_top').classList.add('tempsidebar');
+                } else {
+                    document.getElementById('navbar_top').classList.remove('tempsidebar');
+                } 
+            });
+        });
      </script>
-
-
-
-<!--footer-->
-<footer class="sticky-top">
-        <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
-            <div class="col-12">
-                <div class="row row-2">
-                    <div class="col-sm-3 text-md-center">
-                        <h5><span> <i class="fas fa-book-open"></i></span><b> BookDrive</b></h5>
-                    </div>
-                    <div class="col-sm-3 my-sm-0 mt-5">
-                        <ul class="list-unstyled">
-                            <li class="mt-0"><a href="aboutus">About Us</a></li>
-                            <li><a href="contact">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3 my-sm-0 mt-5">
-                        <ul class="list-unstyled">
-                            <li class="mt-0"><a href="return">Return Policy</li>
-                            <li><a href="bookcondition">Book Condition<br>
-                                Guidlines</li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3 my-sm-0 mt-5">
-                        <ul class="list-unstyled">
-                            <li class="mt-0"><a href="privacy">Privacy Policy</a></li>
-                            <li><a href="terms_conds">Terms & Condition </a></li><br>
-                        </ul>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
-            <div class="col-12">
-                <div class="row my-4 row-1 no-gutters">
-                    <div class="col-sm-3 col-auto text-center"><small>
-                    <script>
-                        document.write('&copy;' );
-                        document.write(' 2019 - ');
-                        document.write(new Date().getFullYear());
-                        document.write(' OJT Group44 - All Rights Reserved.');
-                    </script>
-                  </small></div>
-                    <div class="col-md-3 col-auto "></div>
-                    <div class="col-md-3 col-auto"></div>
-                    <div class="col my-auto text-md-left text-right "><small>
-                    <span><img src="https://i.imgur.com/N90KDYM.png" class="img-fluid " width="25"></span> 
-                    <span><img src="https://i.imgur.com/TtB6MDc.png" class="img-fluid " width="25"></span>
-                    <span><img src="https://www.edigitalagency.com.au/wp-content/uploads/new-instagram-logo-white-border-icon-png-large.png" class="img-fluid " width="25"></span> 
-                </small> </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
-<!--footer end-->
 </body>
  
  </html>
