@@ -231,7 +231,7 @@
             width: 100%;
             min-height: 100vh;
             transition: all 0.3s;
-            padding: 20px;
+            padding: 0 15px;
 }
         }  
 
@@ -559,7 +559,7 @@ footer::before{
     
             <!-- Footer Start -->
             <footer >
-                <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
+                <div class="row justify-content-center mb-0 pt-5 row-2 px-3">
                     <div class="col-12">
                         <div class="row row-2">
                             <div class="col-sm-3 text-md-center">
