@@ -158,7 +158,6 @@
 
         #sidebar ul.components {
             padding: 20px 0;
-            border-bottom: 1px solid #47748b;
         }
 
         #sidebar ul li a {
@@ -438,7 +437,7 @@ footer::before{
         
         <nav id="sidebar" class="tempsidebar" >
             <div class="sidebar-header">
-                <h3><a href="/"> BookDrive</a></h3>
+                <h3><a href="/" > BookDrive</a></h3>
                 <strong><a href="/"> BD</a></strong>
             </div>
 
@@ -500,7 +499,7 @@ footer::before{
 
                     <button type="button" id="sidebarCollapse" class="btn">
                         <i class="fas fa-align-left"></i>
-                        <span>Books Drive</span>
+                        <span style="font-weight:bold;">Books Drive</span>
                     </button>
                    
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -512,7 +511,7 @@ footer::before{
                             <li class="nav-item">
                                 @guest
                                     @if (Route::has('login'))
-                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                            <a class="nav-link" style="font-weight: bold; color:black;" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     @endif
                                 @else
                                 <li class="nav-item active">
