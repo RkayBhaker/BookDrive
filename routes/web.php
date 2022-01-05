@@ -80,7 +80,7 @@ Route::get('/IssueOTHERSbook', function () {
 
 Route::get('/IssueBookform', function(){
     return view('IssueBookform');
-});
+})->middleware('auth');
 
 
 Route::get('/userProfile', function () {

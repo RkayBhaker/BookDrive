@@ -107,7 +107,7 @@
             text-align: center;
         }
 
-        #sidebar.active .sidebar-header h3,
+        #sidebar.active .sidebar-header h2,
         #sidebar.active .CTAs {
             display: none;
         }
@@ -153,7 +153,7 @@
 
         #sidebar .sidebar-header strong {
             display: none;
-            font-size: 1.8em;
+            font-size: 2em;
         }
 
         #sidebar ul.components {
@@ -257,7 +257,7 @@
             #sidebar.active {
                 margin-left: 0 !important;
             }
-            #sidebar .sidebar-header h3,
+            #sidebar .sidebar-header h2,
             #sidebar .CTAs {
                 display: none;
             }
@@ -427,6 +427,12 @@ footer::before{
     position: fixed !important;
     height: 100vh !important;
 }
+
+.right-top-menubar{
+    background: rgb(9,9,121);
+    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(221,221,221,1) 0%);
+}
+
     </style>
 
 </head>
@@ -438,7 +444,7 @@ footer::before{
         
         <nav id="sidebar" class="tempsidebar" >
             <div class="sidebar-header">
-                <h3><a href="/"> BookDrive</a></h3>
+                <h2><a href="/"> BookDrive</a></h2>
                 <strong><a href="/"> BD</a></strong>
             </div>
 
@@ -495,7 +501,7 @@ footer::before{
         <!-- Page Content  -->
         <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg right-top-menubar mt-1">
                 <div class="container-fluid">
 
                     <button type="button" id="sidebarCollapse" class="btn">
