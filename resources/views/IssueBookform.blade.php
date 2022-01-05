@@ -57,6 +57,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <p class="text-center w-responsive mx-auto mb-5 text-secondary">Get Books & Keep Growing with Us and your Knowledge.
 </div>
     <div class="row">
+
     @if(session('success'))
         <div class="alert alert-success" role="alert">
             {{session('success')}}
