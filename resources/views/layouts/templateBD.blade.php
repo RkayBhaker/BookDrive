@@ -230,7 +230,7 @@
             width: 100%;
             min-height: 100vh;
             transition: all 0.3s;
-            padding: 0 15px;
+            /* padding: 0 15px; */
 }
         }  
 
@@ -428,8 +428,11 @@ footer::before{
 }
 
 .right-top-menubar{
-    /* background: rgb(9,9,121); */
-    /* background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(221,221,221,1) 0%); */
+    /* background: rgb(9,9,121);
+    background: linear-gradient(83deg, rgba(9,9,121,1) 0%, rgba(209,219,219,1) 0%); */
+
+    box-shadow : 2px 6px 7px 1px rgba(0,0,0,.4);
+
 }
 
     </style>
