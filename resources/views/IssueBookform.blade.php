@@ -3,7 +3,7 @@
 @section('mainContent')
 <html>
 <head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -56,14 +56,17 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
     <p class="text-center w-responsive mx-auto mb-5 text-secondary">Get Books & Keep Growing with Us and your Knowledge.
 </div>
-    <div class="row">
+    <!-- <div class="row"> -->
 
     @if(session('success'))
         <div class="alert alert-success" role="alert">
             {{session('success')}}
+            <script>
+                $('#exampleModalCenter').modal('show');
+            </script>
         </div>
     @endif
-</div>
+<!-- </div> -->
     <div class="row">
         <!--Grid column-->
         <div class="col-md-9 mb-md-0 mb-5">
@@ -254,8 +257,29 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 
 
             <div class="text-left text-md-center">
-            <button type="submit" id="submitBtn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
             </div>
+
+            <!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
             <!-- <div class="text-left text-md-center">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Reset</button>

@@ -428,8 +428,8 @@ footer::before{
 }
 
 .right-top-menubar{
-    background: rgb(9,9,121);
-    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(221,221,221,1) 0%);
+    /* background: rgb(9,9,121); */
+    /* background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(221,221,221,1) 0%); */
 }
 
     </style>

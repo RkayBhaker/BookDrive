@@ -78,6 +78,11 @@ Route::get('/IssueOTHERSbook', function () {
     return view('IssueOTHERSbook');
 });
 
+//demo
+Route::get('/web', function () {
+    return view('layouts.app');
+});
+
 Route::get('/IssueBookform', function(){
     return view('IssueBookform');
 })->middleware('auth');
