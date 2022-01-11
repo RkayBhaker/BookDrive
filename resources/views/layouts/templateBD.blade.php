@@ -444,7 +444,7 @@ footer::before{
     <div class="wrapper">
         <!-- Sidebar  -->
         
-        <nav id="sidebar" class="tempsidebar" >
+        <nav id="sidebar" class="tempsidebar" onclick="openMenu()" >
             <div class="sidebar-header">
 
                 <h2><a href="/"> BookDrive</a></h2>
@@ -486,13 +486,13 @@ footer::before{
                 </li>
                 <li>
                     <a href="/contact">
-                        <i class="fas fa-coins"></i>
+                        <i class="fas fa-envelope"></i>
                         Contact Us
                     </a>
                 </li>
             <li>
                 <a href="/aboutus">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-users"></i>
                     About Us
                 </a>
             </li>
@@ -507,7 +507,7 @@ footer::before{
             <nav class="navbar navbar-expand-lg right-top-menubar mt-1">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn">
+                    <button type="button" id="sidebarCollapse"  onclick="closeMenu()"  class="btn">
                         <i class="fas fa-align-left"></i>
                         <span style="font-weight:bold;">Books Drive</span>
                     </button>
@@ -524,10 +524,7 @@ footer::before{
                                             <a class="nav-link" style="font-weight: bold; color:black;" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     @endif
                                 @else
-                                <li class="nav-item active">
-                                <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
-                            </li>
+                                
                             <div class="user-dropdown">
                             <li class="nav-item">
                                 <a class="nav-link user-profile" href="#">
@@ -538,7 +535,6 @@ footer::before{
                                <a href="/userProfile">Your Profile</a>  
                                <a href="#">Your Donation</a>
                                <a href="#">Your Order</a>
-                               <a href="#">Settings</a>
                                <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -630,12 +626,19 @@ footer::before{
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
  
      <script type="text/javascript">
-         $(document).ready(function () {
-             $('#sidebarCollapse').on('click', function () {
-                 $('#sidebar').toggleClass('active');
-                 $('#sidebar12').toggleClass('active');
-             });
-         });
+
+function openMenu() {
+      document.getElementById("#sidebar").style.width = "250px";
+    }
+    function closeMenu() {
+      document.getElementById("#sidebarCollapse").style.width = "0";
+    }
+        //  $(document).ready(function () {
+        //      $('#sidebarCollapse').on('click', function () {
+        //          $('#sidebar').toggleClass('active');
+        //          $('#sidebar12').toggleClass('active');
+        //      });
+        //  });
      </script>
 </body>
  
