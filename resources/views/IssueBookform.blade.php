@@ -3,7 +3,7 @@
 @section('mainContent')
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 	<style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -29,21 +29,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
   display:none;
 }
 
-#submitBtn {
-  background-color: dodgerblue;
-  color: white;
-  padding: 15px 20px;
-  border: none;
-  cursor: pointer;
-  width: 40%;
-  opacity: 0.9;
+.button{
+    background-color:#4e67ca;
+    border: #4e67ca;
+    border-radius: 8px;
+    color:white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width:150px;
 }
 
-#submitBtn:hover {
-  opacity: 1;
+.button:hover {
+    background-color:#7386D5;
+    border: #4e67ca;
 }
 
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <!--Section: Contact v.2-->
@@ -54,7 +55,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <h1 style="text-align:center; margin-top: 9%; color:#4e67ca;">Issue Book</h1>
     <!--Section description-->
 
-    <p class="text-center w-responsive mx-auto mb-5 text-secondary">Get Books & Keep Growing with Us and your Knowledge.
+    <p class="text-center w-responsive mx-auto mb-3 text-secondary">Get Books & Keep Growing with Us and your Knowledge. </p>
+    <hr>
 </div>
     <!-- <div class="row"> -->
 
@@ -62,7 +64,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <div class="alert alert-success" role="alert">
             {{session('success')}}
             <script>
-                $('#exampleModalCenter').modal('show');
+                $(function() {
+                    $('#exampleModalCenter').modal('show');
+                });
             </script>
         </div>
     @endif
@@ -192,7 +196,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <div class="col-md-6">
                         <div class="md-form mb-0">
 							<label for="subject" class="">Issue Date</label>
-                            <input type="date" id="issueDate" name="issuedate" class="form-control"><br>    
+                            <input type="date" id="issueDate" name="issuedate" min="2022-01-10" max="2022-02-10" onchange="myfun()" class="form-control"><br>    
                             @error('issuedate')
                             <div class="alert alert-warning" role="alert">
                                 {{$message}}
@@ -206,12 +210,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
                     <div class="col-md-6">
                         <div class="md-form mb-0">
 							<label for="subject" class="">Return Date</label>
-                            <input type="date" id="returnDate" name="returndate" class="form-control"><br>    
-                            @error('returndate')
-                            <div class="alert alert-warning" role="alert">
-                                {{$message}}
-                            </div>
-                        @enderror
+                            <p id="returnDate" name="returndate">
+                                Select the Issue Date
+                            </p>
+                            <input type="text" name="returndate" id="returnDate1" style="display:none">
                         </div>
                     </div>
                 </div>
@@ -254,32 +256,35 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
                     
                 <!--Grid row-->
-                
-
-            <div class="text-left text-md-center">
-            <button type="submit" id="submitBtn" class="btn btn-primary">Submit</button>
-            </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center text-md-center float-right">
+                            <button type="submit" class="button">Submit</button>
+                        </div>
+                    </div>
+                </div>
 
             <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Payment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Payment Mode : Cash On Delivery
+                
+                <div class="alert alert-info mt-4" role="alert">Note ! We will share all infomation throught email.</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+        </div>
 
             <!-- <div class="text-left text-md-center">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Reset</button>
@@ -290,6 +295,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </section>
 </div>
 </body>
+
+<script>
+    function myfun() {
+      let cal1 = new Date(document.querySelector("#issueDate").value);
+
+      let oldDate = cal1;
+
+      oldDate.setFullYear(oldDate.getFullYear() + parseInt(1));
+
+      
+      document.getElementById("returnDate").textContent = oldDate;
+      document.getElementById("returnDate1").setAttribute('value',oldDate);
+      
+    }
+</script>
+
 </html>
 <!-- Section: Contact v.2 -->
 @endsection

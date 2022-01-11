@@ -525,37 +525,37 @@ footer::before{
                                             <a class="nav-link" style="font-weight: bold; color:black;" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     @endif
                                 @else
-                                <li class="nav-item active">
-                                <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
                             </li>
-                            <div class="user-dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link user-profile" href="#">
-                                    <i class="fas fa-user"></i>
-                                    {{ Auth::user()->name }}
-                                </a>
-                            <div class="user-dropdown-list">
-                               <a href="/userProfile">Your Profile</a>  
-                               <a href="#">Your Donation</a>
-                               <a href="#">Your Order</a>
-                               <a href="#">Settings</a>
-                               <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>    
+                            <li class="nav-item mx-3">
+                                <div class="user-dropdown border border-top-0 border-left-0 border-right-0">
+                                    <a class="nav-link user-profile" href="#">
+                                        <i class="fas fa-user"></i>
+                                        &nbsp;
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <div class="user-dropdown-list">
+                                        <a href="/userProfile">Your Profile</a>  
+                                        <a href="#">Your Order</a>
+                                        <a href="#">Settings</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                        </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                @csrf
+                                            </form>
+                                    </div>
+                                </div>
                             </li>
-                            </div>
                                         <!-- <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> -->
                                         
                                 @endguest
-                                </a>
-                            </li>
+                                <!-- </a> -->
+                            <!-- </li> -->
                         </ul>
                     </div>
                 </div>
