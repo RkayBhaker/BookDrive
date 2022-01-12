@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <style>
+        #NavLink{
+            color: black;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        #NavLink:hover{
+            background-color: #7386D5;
+            color: white;
+            border-radius: 10%;
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

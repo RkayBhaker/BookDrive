@@ -62,7 +62,7 @@
         <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard I</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
          <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -74,7 +74,7 @@
   <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard II</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="IssueBookform" class="btn  mr-2" id="Cardbtn">Issue Books</a>
@@ -86,7 +86,7 @@
   <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard III</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -99,7 +99,7 @@
         <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard IV</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
          <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -111,7 +111,7 @@
   <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard V</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="IssueBookform" class="btn mr-2" id="Cardbtn">Issue Books</a>
@@ -123,7 +123,7 @@
   <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard VI</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -136,7 +136,7 @@
         <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard VII</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
          <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -148,7 +148,7 @@
   <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard VIII</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -160,7 +160,7 @@
   <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard IX</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -173,7 +173,7 @@
         <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard X</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
          <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -185,7 +185,7 @@
   <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard XI</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="IssueBookform" class="btn mr-2" id="Cardbtn"> Issue Books</a>
@@ -197,7 +197,7 @@
   <div class="card" style="width: 18rem;">
     <img src="./images.png" class="card-img-top" alt="Book Image">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Standard XII</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
       <p class="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="IssueBookform" class="btn mr-2" id="Cardbtn">Issue Books</a>

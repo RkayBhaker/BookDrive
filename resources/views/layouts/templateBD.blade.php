@@ -465,7 +465,6 @@ footer::before{
                         <li><a href="IssueCBSEbook">CBSE</a></li>
                         <li><a href="IssueICSEbook">ICSE</a></li>
                         <li><a href="IssueMSBTEbook">MSBTE</a></li>
-                        <li><a href="IssueOTHERSbook">Others</a></li>
                     </ul>
             </li>
                 <li>    
