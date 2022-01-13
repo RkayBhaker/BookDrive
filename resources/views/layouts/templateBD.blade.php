@@ -445,7 +445,7 @@ footer::before{
         <!-- Sidebar  -->
         
         <nav id="sidebar" class="tempsidebar" onclick="openMenu()" >
-            <div class="sidebar-header">
+            <div class="sidebar-header" id="sidebar2" onclick="closeMenu()">
 
                 <h2><a href="/"> BookDrive</a></h2>
 
@@ -507,7 +507,7 @@ footer::before{
             <nav class="navbar navbar-expand-lg right-top-menubar mt-1">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse"  onclick="closeMenu()"  class="btn">
+                    <button type="button" id="sidebarCollapse"  class="btn">
                         <i class="fas fa-align-left"></i>
                         <span style="font-weight:bold;">Books Drive</span>
                     </button>
@@ -627,18 +627,18 @@ footer::before{
  
      <script type="text/javascript">
 
-function openMenu() {
-      document.getElementById("#sidebar").style.width = "250px";
-    }
-    function closeMenu() {
-      document.getElementById("#sidebarCollapse").style.width = "0";
-    }
-        //  $(document).ready(function () {
-        //      $('#sidebarCollapse').on('click', function () {
-        //          $('#sidebar').toggleClass('active');
-        //          $('#sidebar12').toggleClass('active');
-        //      });
-        //  });
+// function openMenu() {
+//       document.getElementById("sidebar").style.width = "250px";
+//     }
+//     function closeMenu() {
+//       document.getElementById("sidebar2").style.width = "0";
+//     }
+         $(document).ready(function () {
+             $('#sidebarCollapse').on('click', function () {
+                 $('#sidebar').toggleClass('active');
+                 $('#sidebar12').toggleClass('active');
+             });
+         });
      </script>
 </body>
  
