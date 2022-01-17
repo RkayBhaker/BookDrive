@@ -1,6 +1,18 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    <style>
+        #NavLink{
+            color: black;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        #NavLink:hover{
+            background-color: #7386D5;
+            color: white;
+            border-radius: 10%;
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,12 +30,26 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        body{
+            font-weight:bold;
+        }
+        #loginBtn, #regBtn{
+            color:#fff;
+        }
+        #appLogo{
+            margin:0;
+            padding:0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-primary" href="{{ url('/') }}">
+                <a class="navbar-brand text-primary " id="appLogo" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

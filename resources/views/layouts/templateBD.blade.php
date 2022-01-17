@@ -444,8 +444,8 @@ footer::before{
     <div class="wrapper">
         <!-- Sidebar  -->
         
-        <nav id="sidebar" class="tempsidebar" >
-            <div class="sidebar-header">
+        <nav id="sidebar" class="tempsidebar" onclick="openMenu()" >
+            <div class="sidebar-header" id="sidebar2" onclick="closeMenu()">
 
                 <h2><a href="/"> BookDrive</a></h2>
 
@@ -465,7 +465,6 @@ footer::before{
                         <li><a href="IssueCBSEbook">CBSE</a></li>
                         <li><a href="IssueICSEbook">ICSE</a></li>
                         <li><a href="IssueMSBTEbook">MSBTE</a></li>
-                        <li><a href="IssueOTHERSbook">Others</a></li>
                     </ul>
             </li>
                 <li>    
@@ -487,13 +486,13 @@ footer::before{
                 </li>
                 <li>
                     <a href="/contact">
-                        <i class="fas fa-coins"></i>
+                        <i class="fas fa-envelope"></i>
                         Contact Us
                     </a>
                 </li>
             <li>
                 <a href="/aboutus">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-users"></i>
                     About Us
                 </a>
             </li>
@@ -508,7 +507,7 @@ footer::before{
             <nav class="navbar navbar-expand-lg right-top-menubar mt-1">
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn">
+                    <button type="button" id="sidebarCollapse"  class="btn">
                         <i class="fas fa-align-left"></i>
                         <span style="font-weight:bold;">Books Drive</span>
                     </button>
@@ -525,37 +524,34 @@ footer::before{
                                             <a class="nav-link" style="font-weight: bold; color:black;" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     @endif
                                 @else
-                                <li class="nav-item active">
-                                <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
                             </li>
                             <div class="user-dropdown">
-                            <li class="nav-item">
-                                <a class="nav-link user-profile" href="#">
-                                    <i class="fas fa-user"></i>
-                                    {{ Auth::user()->name }}
-                                </a>
-                            <div class="user-dropdown-list">
-                               <a href="/userProfile">Your Profile</a>  
-                               <a href="#">Your Donation</a>
-                               <a href="#">Your Order</a>
-                               <a href="#">Settings</a>
-                               <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>    
+                            <li class="nav-item mx-3">
+                                <div class="user-dropdown border border-top-0 border-left-0 border-right-0">
+                                    <a class="nav-link user-profile" href="#">
+                                        <i class="fas fa-user"></i>
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <div class="user-dropdown-list">
+                                    <a href="/userProfile">Your Profile</a>  
+                                    <!-- <a href="#">Your Donation</a> -->
+                                    <a href="#">Your Order</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </div>
                             </li>
-                            </div>
                                         <!-- <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> -->
                                         
                                 @endguest
-                                </a>
-                            </li>
+                                <!-- </a> -->
+                            <!-- </li> -->
                         </ul>
                     </div>
                 </div>
@@ -631,6 +627,13 @@ footer::before{
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
  
      <script type="text/javascript">
+
+// function openMenu() {
+//       document.getElementById("sidebar").style.width = "250px";
+//     }
+//     function closeMenu() {
+//       document.getElementById("sidebar2").style.width = "0";
+//     }
          $(document).ready(function () {
              $('#sidebarCollapse').on('click', function () {
                  $('#sidebar').toggleClass('active');

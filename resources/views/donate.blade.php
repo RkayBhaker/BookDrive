@@ -40,17 +40,35 @@
 }
 
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    
+
+    $(function() {
+        $("#donorTypeSection").hide();
+        $("input[name='donorType']").click(function() {
+            if ($("#donorTypeOther").is(":checked")) {
+                $("#donorTypeSection").show();
+            } else {
+                $("#donorTypeSection").hide();
+            }
+        });
+    });
+
+</script>
 </head>
 <body>
 <!--Section: Contact v.2-->
 <div class="contact">
 <section class="mb-4">
 	<div class="contact-form">
-    <!--Section heading-->
-    <h1 style="text-align:center; color:#4e67ca;">Donate Book</h1>
-    <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5" style="color:black;">Donate Book, Donate Smile.
-</div>
+        <!--Section heading-->
+        <h1 style="text-align:center; color:#4e67ca;">Donate Book</h1>
+        <!--Section description-->
+        <p class="text-center w-responsive mx-auto mb-4 text-secondary">Donate Book, Donate Smile.
+        <hr>
+    </div>
 
     @if(session('success'))
         <div class="alert alert-success" role="alert">
@@ -165,7 +183,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="md-form mb-0">
-                            <input type="radio" name="donorType" value="Indiviual"> Indiviual 
+                            <input type="radio" name="donorType" value="Indiviual" id="Indiviual" > Indiviual 
                         </div>
                     </div>
               
@@ -183,26 +201,35 @@
 
                     <div class="col-md-3">
                         <div class="md-form mb-0">
-                            <input type="radio" name="donorType" value="Other"> Other
+                            <input type="radio" name="donorType" id="donorTypeOther" value="Other"> Other
                         </div>
                     </div>
                 </div>
-                  <br>
-                  
-                                @error('donorType')
-                                    <div class="alert alert-warning" role="alert">
-                                        {{$message}}
-                                    </div>
-                                @enderror
+                <br>
+                <div class="row" id="donorTypeSection">
+                    <div class="col">
+                        <label for="name" class="">Other Donor Type</label>
+                        <input type="text" id="orgType" name="orgType" class="form-control" placeholder="Enter the Donor tye . . ." ><br>
+                            @error('orgType')
+                                <div class="alert alert-warning" role="alert">
+                                    {{$message}}
+                                </div>
+                            @enderror
+                    </div>
+                </div>
+                @error('donorType')
+                    <div class="alert alert-warning" role="alert">
+                        {{$message}}
+                    </div>
+                @enderror
                   
                 <!--Grid row-->
                 <div class="row">
-
                     <!--Grid column-->
-                    <div class="col-md-9">
+                    <div class="col-md-12">
                         <div class="md-form">
 							<label for="message">Book Condition</label>
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" placeholder="..."></textarea>
+                            <textarea type="text" id="message" name="message" rows="3" class="form-control md-textarea" placeholder="..."></textarea>
                             <br>
                             
                                 @error('message')
@@ -215,38 +242,14 @@
                     </div>
                 </div>
                 <!--Grid row-->
-                <br>
+                
                 <div class="row">
-
                     <!--Grid column-->
-                    <div class="col-md-5">
-                        <div class="md-form mb-0">
-                            <label for="name" class="">Book Category</label>
-                            <select class="form-control" id="sel1" name="bookCategory">
-                                <option value="N/A">Select Category</option>
-                                <option value="NCERT">NCERT</option>
-                                <option value="CBSE">CBSE</option>
-                                <option value="ICSE">ICSE</option>
-                                <option value="Academic">Academic</option>
-                                <option value="Others">Others</option>
-                            </select>
-                            <br>
-                            
-                                @error('bookCategory')
-                                    <div class="alert alert-warning" role="alert">
-                                        {{$message}}
-                                    </div>
-                                @enderror
-                            
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                         <div class="md-form mb-0">
                         <label for="name" class="">Number of Books</label>
                             <input type="text" id="noOfBook" name="noOfBook" class="form-control" placeholder="Total no. of books" >
+                            <br>
                                 @error('noOfBook')
                                     <div class="alert alert-warning" role="alert">
                                         {{$message}}
@@ -255,13 +258,16 @@
                         </div>
                     </div>
                     <!--Grid column-->
-
                 </div>
                 <!--Grid row-->
-
-            <div class="text-center text-md-center">
-            <button type="submit" class="button" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
-            </div>
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-center text-md-center float-right">
+                            <button type="submit" class="button" data-toggle="modal" data-target="#exampleModalCenter">Submit</button>
+                        </div>
+                    </div>
+                </div>
     </form>
         <!--Grid column-->
 <!-- Modal -->
