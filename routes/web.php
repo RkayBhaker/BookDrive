@@ -62,9 +62,9 @@ Route::get('/login', function () {
     return view('layouts.app');
 });
 
-Route::get('/IssueNCERTbook', function () {
-    return view('IssueNCERTbook');
-});
+// NCERT BOOKS Route
+Route::get('/IssueNCERTbook', [App\Http\Controllers\bookDetialsController::class, 'ncertBook'])->name('ncert.book');
+
 Route::get('/IssueCBSEbook', function () {
     return view('IssueCBSEbook');
 });
