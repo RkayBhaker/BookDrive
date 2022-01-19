@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIssueFormsTable extends Migration
+class CreateDemosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateIssueFormsTable extends Migration
      */
     public function up()
     {
-        Schema::create('issue_forms', function (Blueprint $table) {
+        Schema::create('demos', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
             $table->string('orderId');
             $table->bigInteger('phno');
             $table->string('email');
+            $table->string('address');
             $table->date('issue_date');
             $table->string('return_date');
-            $table->string('address');
             $table->string('agreement I');
             $table->string('agreement II');
             $table->timestamps();
@@ -35,6 +35,6 @@ class CreateIssueFormsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('issue_forms');
+        Schema::dropIfExists('demos');
     }
 }

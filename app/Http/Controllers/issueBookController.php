@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\issuebook;
+use App\Models\demo;
+use App\Models\order;
+use App\Models\donated_Book;
 use Illuminate\Support\Carbon;
 
 class issueBookController extends Controller
@@ -11,8 +14,6 @@ class issueBookController extends Controller
     //
     public function issueBook(Request $request){
         // $validateData = $request->validate([
-        //     "bookCategory" => "required",
-        //     "bookSet" => "required",
         //     "fname" => "required|min:4",
         //     "lname" => "min:2",
         //     "phno" => "required|digits:10",
@@ -24,8 +25,6 @@ class issueBookController extends Controller
         //     "agreement_II" => "required"
         // ],
         // [
-        //     "bookCategory" => "Please select your book category",
-        //     "bookSet" => "Please select book set type",
         //     "fname" => "Please enter your first name",
         //     "lname" => "Last name should be atleast minimum 2 character",
         //     "phno" => "Phone number should have at least 10 digits",
@@ -37,23 +36,46 @@ class issueBookController extends Controller
         //     "agreement_II" => "Field required"
         // ]);
 
-        // $fname = $request->fname;
-        // $lname = $request->lname;
-        // $fullName = $fname.' '.$lname;
+        $fname = $request->fname;
+        $lname = $request->lname;
+        $fullName = $fname.' '.$lname;
 
-        // issuebook::insert([
-        //     "book_category"=> $request->bookCategory,
-        //     "book_set"=> $request->bookSet,
-        //     "fullname"=> $fullName,
-        //     "phno"=> $request->phno,
-        //     "email"=> $request->email,
-        //     "issue_date"=> $request->issuedate,
-        //     "return_date"=> $request->returndate,
-        //     "address"=> $request->address,
-        //     "agreement I"=> $request->agreement_I,
-        //     "agreement II"=> $request->agreement_II,
-        //     "created_at"=> Carbon::now()
-        // ]);
+        $orderId = $request->orderId;
+        $request->session('cart')->put('uniqueOrderId', $orderId);
+
+        foreach(session('cart') as $id => $details){
+            $title = $details['title'];
+            $category = $details['category'];
+            $board = $details['board'];
+            $token = $details['unique_id'];
+            $orderId = session()->get('uniqueOrderId');
+
+            order::insert([
+                "title" => $title,
+                "category" => $category,
+                "board" => $board,
+                "token" => $token,
+                "orderId" => $orderId
+            ]);
+
+            donated_Book::where("token", $token)
+            ->where("category", $category)
+            ->update(['status' => 0]);
+            
+        }
+
+        demo::insert([
+            "fullname"=> $fullName,
+            "orderId"=> $orderId,
+            "phno"=> $request->phno,
+            "email"=> $request->email,
+            "issue_date"=> $request->issuedate,
+            "return_date"=> $request->returndate,
+            "address"=> $request->address,
+            "agreement I"=> $request->agreement_I,
+            "agreement II"=> $request->agreement_II,
+            "created_at"=> Carbon::now()
+        ]);
 
         return Redirect()->back()->with('success', 'form submitted successfully.');
     }
