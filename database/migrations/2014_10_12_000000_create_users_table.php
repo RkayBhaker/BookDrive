@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('userToken');
             $table->string('lname')->nullable();
             $table->string('email')->unique();
             $table->bigInteger('phno')->nullable();
@@ -27,7 +28,7 @@ class CreateUsersTable extends Migration
         });
     }
 
-    /**
+    /* *
      * Reverse the migrations.
      *
      * @return void

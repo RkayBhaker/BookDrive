@@ -58,7 +58,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <p class="text-center w-responsive mx-auto mb-3 text-secondary">Get Books & Keep Growing with Us and your Knowledge. </p>
     <hr>
 </div>
-    <!-- <div class="row"> -->
 
     @if(session('success'))
         <div class="alert alert-success" role="alert">
@@ -70,68 +69,31 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </script>
         </div>
     @endif
-<!-- </div> -->
+
+<!-- <hr> -->
+
+<!-- <div class="m-5"> -->
+    <?php
+        // print_r(session()->get('uniqueOrderId'));
+        // print_r(session('cart'));
+    ?>
+<!-- </div>
+
+<hr> -->
+
     <div class="row">
         <!--Grid column-->
         <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" action="{{ Route('issuebook.form') }}" method="POST">
+            <form id="contact-form" action="{{Route('issuebook.form')}}" method="POST">
                 @csrf
-                <!--Grid row-->
-                <div class="row">
-
-
-                <!--Grid column-->
-                <div class="col-md-6">
-                    <div class="md-form mb-0">
-                        <label for="name" class="">Book Category</label>
-                        <select class="form-control" id="sel1" name="bookCategory">
-                            <option >Select Category....</option>
-                                <option value="NCERT">NCERT</option>
-                                <option value="CBSE">CBSE</option>
-                                <option value="ICSE">ICSE</option>
-                                <option value="MSBTE">MSBTE</option>
-                                <option value="Others">Others</option>
-                        </select>
-                        <br>
-                        @error('bookCategory')
-                            <div class="alert alert-warning" role="alert">
-                                {{$message}}
-                            </div>
-                        @enderror
-                    </div>
-                </div>
-
-                        <!--Grid column-->
-
-                         <!--Grid column-->
-                         <div class="col-md-6">
-                            <div class="md-form mb-0">
-                            <label for="name" class="">Book Set</label>
-                           
-                        <select name="bookSet" class="form-control" id="sel1">
-                                <option value="null" >Select Standard....</option>
-                                <option value="Standard I">Standard I</option>
-                                <option value="Standard II">Standard II</option>
-                                <option value="Standard III">Standard III</option>
-                                <option value="Standard IV">Standard IV</option>
-                                <option value="Standard V">Standard v</option>
-                        </select><br>
-                        @error('bookSet')
-                            <div class="alert alert-warning" role="alert">
-                                {{$message}}
-                            </div>
-                        @enderror
-                            </div>
-                        </div>
-                </div>
-                        <!--Grid column-->
-
-                        <div class="row">
                     <!--Grid column-->
+                    <div class="row">
+                    <!--Grid column-->
+                    <input type="text" id="orderId" name="orderId" style="display:none;" value="@php echo rand().'bookdrive' @endphp">
                     <div class="col-md-6">
                         <div class="md-form mb-0">
 						<label for="name" class="">First Name</label>
-                            <input type="name" id="firstname" name="fname" placeholder="Fist Name" class="form-control" ><br>
+                            <input type="name" id="firstname" name="fname" placeholder="First Name" class="form-control" ><br>
                             @error('fname')
                             <div class="alert alert-warning" role="alert">
                                 {{$message}}
@@ -213,7 +175,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                             <p id="returnDate" name="returndate">
                                 Select the Issue Date
                             </p>
-                            <input type="text" name="returndate" id="returnDate1" style="display:none">
+                            <input type="text" name="returndate" id="returnDate1" style="display:none;">
                         </div>
                     </div>
                 </div>

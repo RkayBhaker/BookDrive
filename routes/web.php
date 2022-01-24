@@ -65,9 +65,9 @@ Route::get('/login', function () {
 // NCERT BOOKS Route
 Route::get('/IssueNCERTbook', [App\Http\Controllers\bookDetialsController::class, 'ncertBook'])->name('ncert.book');
 
-Route::get('/IssueCBSEbook', function () {
-    return view('IssueCBSEbook');
-});
+// NCERT BOOKS Route
+Route::get('/IssueCBSEbook', [App\Http\Controllers\bookDetialsController::class, 'cbseBook'])->name('cbse.book');
+
 Route::get('/IssueICSEbook', function () {
     return view('IssueICSEbook');
 });
@@ -83,10 +83,13 @@ Route::get('/web', function () {
     return view('layouts.app');
 });
 
-Route::get('/IssueBookform', function(){
+Route::get('/BookIssueform', function(){
     return view('IssueBookform');
-})->middleware('auth');
+})->middleware('auth')->name('IssueBookInfo.form');
 
+// order route section
+Route::get('/orders', [App\Http\Controllers\userOrderController::class, 'userOrder'])->middleware('auth')->name('order.list');
+// order route section end
 
 Route::get('/userProfile', function () {
     return view('userProfile');
@@ -103,6 +106,15 @@ Route::post('/UpdateUser', [App\Http\Controllers\updateUserController::class, 'u
 
 // Issue book form
 Route::post('/issueBook', [App\Http\Controllers\issueBookController::class, 'issueBook'])->name('issuebook.form');
+
+
+// Route for cart
+Route::get('/product', [App\Http\Controllers\ProductController::class, 'index']);
+Route::get('cart', [App\Http\Controllers\ProductController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [App\Http\Controllers\ProductController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [App\Http\Controllers\ProductController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [App\Http\Controllers\ProductController::class, 'remove'])->name('remove.from.cart');
+
 
 // verify email address
 Auth::routes(['verify' => true]);

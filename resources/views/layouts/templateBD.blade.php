@@ -16,6 +16,7 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
     <style>
         @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
         * {
@@ -88,16 +89,15 @@
         .wrapper {
             display: flex;
             align-items: stretch;
-            
         }
 
         #sidebar12,
         #sidebar {
-            min-width: 250px;
-            max-width: 250px;
+            min-width: 200px;
+            max-width: 200px;
             background: #7386D5;
             color: #fff;
-            transition: all 0.3s;
+            transition: all 0.2s;
         }
 
         #sidebar12.active,
@@ -105,6 +105,16 @@
             min-width: 80px;
             max-width: 80px;
             text-align: center;
+        }
+        #sidebar.active::before{
+            content : '';
+            width : 1px;
+            right : 0;
+            z-index: 1;
+            top : 0;
+            height : 100%;
+            background : blue;
+            position: absolute;
         }
 
         #sidebar.active .sidebar-header h2,
@@ -121,7 +131,7 @@
         }
 
         #sidebar.active ul li a {
-            padding: 20px 10px;
+            padding: 18px 10px;
             text-align: center;
             font-size: 0.85em;
         }
@@ -366,6 +376,7 @@ button:hover {
 
 footer {
     color: #fff;
+    z-index: -1;
     position: relative;
 }
 footer::before{
@@ -432,7 +443,12 @@ footer::before{
     background: linear-gradient(83deg, rgba(9,9,121,1) 0%, rgba(209,219,219,1) 0%); */
 
     box-shadow : 2px 6px 7px 1px rgba(0,0,0,.4);
+}
 
+#btn{
+    padding : 0;
+    margin : 0;
+    background : none;
 }
 
     </style>
@@ -463,8 +479,8 @@ footer::before{
                     <ul class="collapse list-unstyled" id="getBooksMenu">
                         <li><a href="IssueNCERTbook">NCERT</a></li>
                         <li><a href="IssueCBSEbook">CBSE</a></li>
-                        <li><a href="IssueICSEbook">ICSE</a></li>
-                        <li><a href="IssueMSBTEbook">MSBTE</a></li>
+                        <li><a href="#">ICSE</a></li>
+                        <li><a href="#">MSBTE</a></li>
                     </ul>
             </li>
                 <li>    
@@ -518,14 +534,16 @@ footer::before{
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item">
+                            
                                 @guest
                                     @if (Route::has('login'))
-                                            <a class="nav-link" style="font-weight: bold; color:black;" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <li class="nav-item border px-4 rounded mx-1">
+                                        <a class="nav-link" style="font-weight: bold; color:black;" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
                                     @endif
                                 @else
-                            </li>
-                            <div class="user-dropdown">
+                            
+                            <!-- <div class="user-dropdown"> -->
                             <li class="nav-item mx-3">
                                 <div class="user-dropdown border border-top-0 border-left-0 border-right-0">
                                     <a class="nav-link user-profile" href="#">
@@ -533,9 +551,8 @@ footer::before{
                                         {{ Auth::user()->name }}
                                     </a>
                                     <div class="user-dropdown-list">
-                                    <a href="/userProfile">Your Profile</a>  
-                                    <!-- <a href="#">Your Donation</a> -->
-                                    <a href="#">Your Order</a>
+                                    <a href="/userProfile">Your Profile</a>
+                                    <a href="{{ route('order.list') }}">Your Order</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
@@ -547,11 +564,43 @@ footer::before{
                                     </div>
                                 </div>
                             </li>
-                                        <!-- <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> -->
                                         
                                 @endguest
-                                <!-- </a> -->
-                            <!-- </li> -->
+                                
+                            <li class="nav-item">
+                                            <div class="dropdown">
+                                                <!-- <button type="button" class="btn text-primary border" id="btn" data-toggle="dropdown">
+                                                    <span style="font-size: 14px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart {{ count((array) session('cart')) }}</span>
+                                                </button> -->
+                                                <a href="{{ route('cart') }}" class="btn text-primary border px-3 py-2" id="btn">
+                                                    <span style="font-size: 14px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span class="rounded-circle border px-2 bg-info text-white">{{ count((array) session('cart')) }}</span></span>
+                                                </a>
+                                                <!-- <div class="dropdown-menu">
+                                                    <div class="row total-header-section">
+                                                        <div class="col-lg-6 col-sm-6 col-6">
+                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>{{ count((array) session('cart')) }}
+                                                        </div>
+                                                    </div>
+                                                    @if(session('cart'))
+                                                        @foreach(session('cart') as $id => $details)
+                                                            <div class="row cart-detail">
+                                                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                                                    <img src="{{ $details['image'] }}" />
+                                                                </div>
+                                                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
+                                                                    <p>{{ $details['title'] }}</p>
+                                                                </div>
+                                                            </div>
+                                                        @endforeach
+                                                    @endif
+                                                    <div class="row">
+                                                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                                            <a href="{{ route('cart') }}" class="btn btn-primary">View all</a>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -560,8 +609,7 @@ footer::before{
              <main>
                  @yield('mainContent')
              </main>
-        
-    
+             @yield('scripts')
     
             <!-- Footer Start -->
             <footer >
@@ -626,6 +674,9 @@ footer::before{
      <!-- Bootstrap JS -->
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
  
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
      <script type="text/javascript">
 
 // function openMenu() {

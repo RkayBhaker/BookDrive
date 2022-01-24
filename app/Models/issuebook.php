@@ -10,9 +10,8 @@ class issuebook extends Model
     use HasFactory;
 
     protected $fillable = [
-        'book_category',
-        'book_set',
         'fullname',
+        'orderId',
         'phno',
         'email',
         'issue_date',
