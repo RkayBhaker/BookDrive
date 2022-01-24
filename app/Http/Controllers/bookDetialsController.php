@@ -43,6 +43,7 @@ class bookDetialsController extends Controller
                 ->where('category', $data[0])
                 ->where('Language', $data[1])
                 ->where('board', $data[2])
+                ->where('status', true)
                 ->first();
 
                 $all_total_book = donated_Book::all()
@@ -52,13 +53,24 @@ class bookDetialsController extends Controller
                 ->where('status', true)
                 ->count();
 
-                array_push($NCERT_data, $all_sorted_data);
-                array_push($NCERT_total_book, $all_total_book);
+                if($all_sorted_data != null){
+                    array_push($NCERT_data, $all_sorted_data);
+                    array_push($NCERT_total_book, $all_total_book);
+                }
         }
 
         // print_r($NCERT_total_book);
+        
 
         // echo '<hr>';
+
+        // print_r($NCERT_data);
+
+        // foreach($NCERT_data as $value){
+        //     echo json_encode($value, JSON_PRETTY_PRINT);
+        // }
+
+        // print_r(count($NCERT_data));
 
         // foreach($NCERT_data as $value){
         //     $id = 0;
@@ -68,7 +80,7 @@ class bookDetialsController extends Controller
         //         }
         //         echo $id;
         //         echo '<br>';
-        //         echo $value['title'];
+        //         echo $NCERT_data['title'];
         //         echo '<br>';
         //         echo $value['status'];
         //         echo '<br>';

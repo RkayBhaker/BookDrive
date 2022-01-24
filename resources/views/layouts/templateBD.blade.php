@@ -89,16 +89,15 @@
         .wrapper {
             display: flex;
             align-items: stretch;
-            
         }
 
         #sidebar12,
         #sidebar {
-            min-width: 250px;
-            max-width: 250px;
+            min-width: 200px;
+            max-width: 200px;
             background: #7386D5;
             color: #fff;
-            transition: all 0.3s;
+            transition: all 0.2s;
         }
 
         #sidebar12.active,
@@ -106,6 +105,16 @@
             min-width: 80px;
             max-width: 80px;
             text-align: center;
+        }
+        #sidebar.active::before{
+            content : '';
+            width : 1px;
+            right : 0;
+            z-index: 1;
+            top : 0;
+            height : 100%;
+            background : blue;
+            position: absolute;
         }
 
         #sidebar.active .sidebar-header h2,
@@ -122,7 +131,7 @@
         }
 
         #sidebar.active ul li a {
-            padding: 20px 10px;
+            padding: 18px 10px;
             text-align: center;
             font-size: 0.85em;
         }
@@ -543,7 +552,7 @@ footer::before{
                                     </a>
                                     <div class="user-dropdown-list">
                                     <a href="/userProfile">Your Profile</a>
-                                    <a href="#">Your Order</a>
+                                    <a href="{{ route('order.list') }}">Your Order</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">

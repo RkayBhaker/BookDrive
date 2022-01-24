@@ -16,6 +16,7 @@ class CreateDemosTable extends Migration
         Schema::create('demos', function (Blueprint $table) {
             $table->id();
             $table->string('fullname');
+            $table->string('userToken');
             $table->string('orderId');
             $table->bigInteger('phno');
             $table->string('email');

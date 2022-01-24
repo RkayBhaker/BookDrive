@@ -17,7 +17,7 @@
     background : rgba(0,0,0,0.1);
     display: grid;
     padding: 15px;
-    grid-template-columns : repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns : repeat(auto-fill, minmax(270px, 1fr));
     grid-template-rows : 1fr;
     grid-gap: 12px;
   }
@@ -56,9 +56,9 @@
     $id = 0;
   ?>
   @foreach($NCERT_data as $value)
-      <div class="card border" style="width: 18rem;">
+      <div class="card border" style="width: 17rem;">
           <p class="board_logo px-2 py-1 m-1 rounded bg-secondary">NCERT</p>
-          <img class="card-img-top" src="./images.png" alt="Card image cap">
+          <img class="card-img-top" src="/images.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"> {{$value->title}} </h5>
             <p class="card-text"> {{$value->desc}} </p>

@@ -87,6 +87,9 @@ Route::get('/BookIssueform', function(){
     return view('IssueBookform');
 })->middleware('auth')->name('IssueBookInfo.form');
 
+// order route section
+Route::get('/orders', [App\Http\Controllers\userOrderController::class, 'userOrder'])->middleware('auth')->name('order.list');
+// order route section end
 
 Route::get('/userProfile', function () {
     return view('userProfile');

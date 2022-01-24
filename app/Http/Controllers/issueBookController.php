@@ -8,6 +8,8 @@ use App\Models\demo;
 use App\Models\order;
 use App\Models\donated_Book;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\userOrderContoller;
 
 class issueBookController extends Controller
 {
@@ -43,6 +45,8 @@ class issueBookController extends Controller
         $orderId = $request->orderId;
         $request->session('cart')->put('uniqueOrderId', $orderId);
 
+        $userToken = Auth::user()->userToken;
+
         foreach(session('cart') as $id => $details){
             $title = $details['title'];
             $category = $details['category'];
@@ -51,11 +55,13 @@ class issueBookController extends Controller
             $orderId = session()->get('uniqueOrderId');
 
             order::insert([
+                "userToken" => $userToken,
                 "title" => $title,
                 "category" => $category,
                 "board" => $board,
                 "token" => $token,
-                "orderId" => $orderId
+                "orderId" => $orderId,
+                "created_at" => carbon::now()
             ]);
 
             donated_Book::where("token", $token)
@@ -65,6 +71,7 @@ class issueBookController extends Controller
         }
 
         demo::insert([
+            "userToken" => Auth::user()->userToken,
             "fullname"=> $fullName,
             "orderId"=> $orderId,
             "phno"=> $request->phno,
@@ -77,6 +84,9 @@ class issueBookController extends Controller
             "created_at"=> Carbon::now()
         ]);
 
-        return Redirect()->back()->with('success', 'form submitted successfully.');
+        $request->session()->forget('cart');
+
+        return redirect()->action([userOrderController::class, 'userOrder']);
+        // return Redirect()->back()->with('success', 'form submitted successfully.');
     }
 }
