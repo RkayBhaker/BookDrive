@@ -112,8 +112,7 @@
   </div>
   
   <div class="card"><br><br>
-  <img class="rounded-circle" width="200px" height="200px" src="pride11.jpg"
-          data-holder-rendered="true">
+<          data-holder-rendered="true">
     <div class="card-body">
       <h5 class="card-title">Shristi Sardar</h5>
       <p class="card-text"></p>

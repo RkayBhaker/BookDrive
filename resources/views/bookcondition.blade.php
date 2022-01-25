@@ -44,6 +44,16 @@ b {
 <li><p>Too old or out of syllabus textbooks.</p></li>
 </ul>
 
+<br>
+
+<p>Below given are the condition of books that we approve -<p>
+<ul>
+<li><p>Good Condition.</p></li>
+<li><p>Good Pages but Poor Binding.</p></li>
+<li><p>Good Pages but Poor Cover. </p></li>
+<li><p>Good Pages but No Cover</p></li>
+</ul>
+
 </div>
 </div>
 </body>
