@@ -10,6 +10,8 @@ use App\Models\donated_Book;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\userOrderContoller;
+use App\Mail\OrderShipped;
+use Illuminate\Support\Facades\Mail;
 
 class issueBookController extends Controller
 {
@@ -85,6 +87,8 @@ class issueBookController extends Controller
         ]);
 
         $request->session()->forget('cart');
+
+        Mail::to(Auth::user()->email)->send(new OrderShipped());
 
         return redirect()->action([userOrderController::class, 'userOrder']);
         // return Redirect()->back()->with('success', 'form submitted successfully.');

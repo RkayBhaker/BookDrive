@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\OrderShipped;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -115,6 +116,12 @@ Route::get('add-to-cart/{id}', [App\Http\Controllers\ProductController::class, '
 Route::patch('update-cart', [App\Http\Controllers\ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [App\Http\Controllers\ProductController::class, 'remove'])->name('remove.from.cart');
 
+
+// order email
+// Route::get('email', function(){
+//     Mail::to('email@email.com')->send(new OrderShipped());
+//     return new OrderShipped();
+// });
 
 // verify email address
 Auth::routes(['verify' => true]);

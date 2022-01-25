@@ -17,7 +17,7 @@
             position: relative;
         }
         .container-wrap{
-            height : 81.4%;
+            height : 81.1%;
             width: 100%;
             background: rgba(0,0,0,0.5);
             position: absolute;
@@ -28,12 +28,12 @@
         .card-title{
             position: absolute;
             left : 10px;
-            bottom : 40px;
+            bottom : 55px;
         }
         .card-text{
             color: #fff;
             right : 0;
-            bottom : 50px;
+            bottom : 64px;
             padding: 2px 5px;
             background: rgba(0,0,0,0.5);
             position: absolute;
@@ -52,7 +52,12 @@
                 <p class="card-text">{{ $details->board }}</p>
             </div>
             <div class="card-footer">
-                <small class="text-muted">{{ \Carbon\Carbon::parse($details['created_at'])->diffForHumans() }}</small>
+                <br>
+                <small class="text-muted">Ordered : {{ \Carbon\Carbon::parse($details['created_at'])->diffForHumans() }}</small>
+                <!-- <hr> -->
+                <!-- Your Order will deliver by tomorrow evening. -->
+                <br>
+                <small class="text-muted">Wed Jan 25 2023 05:30:00 GMT+0530</small>
             </div>
         </div>
     @endforeach
