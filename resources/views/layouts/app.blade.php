@@ -43,13 +43,29 @@
             font-size: 32px;
             font-weight: bold;
         }
+
+        .button{
+    background-color:#4e67ca;
+    border: #4e67ca;
+    border-radius: 8px;
+    color:white;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width:100px;
+    cursor: pointer;
+    text-align:center;
+}
+
+.button:hover {
+    background-color:#7386D5;
+    border: #4e67ca;
+}
     </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-primary " id="appLogo" href="{{ url('/') }}">
+                <a class="navbar-brand text-primary" style="color:#4e67ca;" id="appLogo" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -68,13 +84,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-outline-primary mx-1 px-4" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link button mx-1 px-4" style="color:white;" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-outline-primary mx-1 px-4" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link button mx-1 px-4" style="color:white;" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else

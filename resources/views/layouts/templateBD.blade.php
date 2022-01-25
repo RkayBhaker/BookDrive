@@ -451,6 +451,7 @@ footer::before{
     background : none;
 }
 
+
     </style>
 
 </head>
@@ -538,7 +539,7 @@ footer::before{
                                 @guest
                                     @if (Route::has('login'))
                                     <li class="nav-item border px-4 rounded mx-1">
-                                        <a class="nav-link" style="font-weight: bold; color:black;" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <a class="nav-link" style="font-weight: bold; color:#4e67ca;" href="{{ route('login') }}">{{ __('Login') }}</a>
                                     </li>
                                     @endif
                                 @else
@@ -546,7 +547,7 @@ footer::before{
                             <!-- <div class="user-dropdown"> -->
                             <li class="nav-item mx-3">
                                 <div class="user-dropdown border border-top-0 border-left-0 border-right-0">
-                                    <a class="nav-link user-profile" href="#">
+                                    <a class="nav-link user-profile" style="color:#4e67ca;" href="#">
                                         <i class="fas fa-user"></i>
                                         {{ Auth::user()->name }}
                                     </a>
@@ -573,7 +574,7 @@ footer::before{
                                                     <span style="font-size: 14px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart {{ count((array) session('cart')) }}</span>
                                                 </button> -->
                                                 <a href="{{ route('cart') }}" class="btn text-primary border px-3 py-2" id="btn">
-                                                    <span style="font-size: 14px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart <span class="rounded-circle border px-2 bg-info text-white">{{ count((array) session('cart')) }}</span></span>
+                                                    <span style="font-size: 14px; color:#4e67ca;"><i class="fa fa-shopping-cart" style="color:#4e67ca;" aria-hidden="true"></i>Cart <span class="rounded-circle border px-2 bg-#4e67ca text-white" style="background-color:#4e67ca;">{{ count((array) session('cart')) }}</span></span>
                                                 </a>
                                                 <!-- <div class="dropdown-menu">
                                                     <div class="row total-header-section">
