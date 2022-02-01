@@ -389,6 +389,26 @@ footer::before{
     top : 0;
 }
 
+footer ul > li{
+    position: relative;
+    /* border : 2px ridge red; */
+    overflow: hidden;
+}
+
+footer ul > li::after{
+    content : '';
+    width: 70%;
+    height: 1px;
+    background : #fff;
+    position: absolute;
+    left: -70%;
+    bottom: 0;
+    transition : all .3s;
+}
+footer ul > li:hover::after{
+    left : 0;
+    bottom : 0;
+}
 .Careers {
     cursor: pointer;
     color: #1E88E5
@@ -613,7 +633,7 @@ footer::before{
              @yield('scripts')
     
             <!-- Footer Start -->
-            <footer class="container">
+            <footer class="container-fluid">
                 <div class="row justify-content-center mb-0 pt-5 row-2 px-3 border">
                     <div class="col-12">
                         <div class="row row-2">
@@ -622,20 +642,19 @@ footer::before{
                             </div>
                             <div class="col-sm-3 my-sm-0 mt-5">
                                 <ul class="list-unstyled">
-                                    <li class="mt-0"><a href="aboutus">About Us</a></li>
+                                    <li class="py-2 mt-0"><a href="aboutus">About Us</a></li>
                                     <li><a href="/contact">Contact Us</a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-3 my-sm-0 mt-5">
                                 <ul class="list-unstyled">
-                                    <li class="mt-0"><a href="return">Return Policy</li>
-                                    <li><a href="bookcondition">Book Condition<br>
-                                        Guidlines</li>
+                                    <li class="py-2 mt-0"><a href="return">Return Policy</li>
+                                    <li><a href="bookcondition">Book Condition Guidlines</li>
                                 </ul>
                             </div>
                             <div class="col-sm-3 my-sm-0 mt-5">
                                 <ul class="list-unstyled">
-                                    <li class="mt-0"><a href="privacy">Privacy Policy</a></li>
+                                    <li class="py-2 mt-0"><a href="privacy">Privacy Policy</a></li>
                                     <li><a href="terms_conds">Terms & Condition </a></li><br>
                                 </ul>
                                 <br>
