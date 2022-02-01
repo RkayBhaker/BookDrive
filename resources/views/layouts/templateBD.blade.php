@@ -376,7 +376,7 @@ button:hover {
 
 footer {
     color: #fff;
-    z-index: -1;
+    /* z-index: -1; */
     position: relative;
 }
 footer::before{
@@ -613,8 +613,8 @@ footer::before{
              @yield('scripts')
     
             <!-- Footer Start -->
-            <footer >
-                <div class="row justify-content-center mb-0 pt-5 row-2 px-3">
+            <footer class="container">
+                <div class="row justify-content-center mb-0 pt-5 row-2 px-3 border">
                     <div class="col-12">
                         <div class="row row-2">
                             <div class="col-sm-3 text-md-center">

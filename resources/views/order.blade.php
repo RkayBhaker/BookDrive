@@ -52,9 +52,9 @@
                 <p class="card-text">{{ $details->board }}</p>
             </div>
             <div class="card-footer">
+                <!-- <br>
                 <br>
-                <br>
-                <br>
+                <br> -->
                 <!-- <small class="text-muted">Ordered :  \Carbon\Carbon::parse($details['created_at'])->diffForHumans()</small> -->
                 <!-- <hr> -->
                 <!-- Your Order will deliver by tomorrow evening. -->
