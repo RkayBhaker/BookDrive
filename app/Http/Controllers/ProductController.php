@@ -31,24 +31,25 @@ class ProductController extends Controller
      */
     public function addToCart($id)
     {
-        $product = donated_Book::findOrFail($id);
+        // $product = donated_Book::findOrFail(1);
+        $product = donated_Book::all();
+        $product = $product->find($id);
           
         $cart = session()->get('cart', []);
-  
-        if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
-        } else {
-            $cart[$id] = [
-                "title" => $product->title,
-                "quantity" => 1,
-                "category" => $product->category,
-                "board" => $product->board,
-                "token" => $product->token,
-                "unique_id" => $product->token,
-                "desc" => $product->desc,
-                "image" => $product->image
-            ];
-        }
+            if(isset($cart[$id])) {
+                $cart[$id]['quantity']++;
+            } else {
+                $cart[$id] = [
+                    "title" => $product->title,
+                    "quantity" => 1,
+                    "category" => $product->category,
+                    "board" => $product->board,
+                    "token" => $product->token,
+                    "unique_id" => $product->token,
+                    "desc" => $product->desc,
+                    "image" => $product->image
+                ];
+            }
           
         session()->put('cart', $cart);
         return redirect()->back()->with('success', 'Product added to cart successfully!');

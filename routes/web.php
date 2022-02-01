@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\demo;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Mail;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/demoEmail', function(){
+    Mail::to('demo@demo.com')->send(new demo());
+    return new demo();
+});
 
 Route::get('/', function () {
     return view('welcome');

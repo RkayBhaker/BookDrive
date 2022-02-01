@@ -28,12 +28,12 @@
         .card-title{
             position: absolute;
             left : 10px;
-            bottom : 55px;
+            bottom : 65px;
         }
         .card-text{
             color: #fff;
             right : 0;
-            bottom : 64px;
+            bottom : 73px;
             padding: 2px 5px;
             background: rgba(0,0,0,0.5);
             position: absolute;
@@ -53,7 +53,9 @@
             </div>
             <div class="card-footer">
                 <br>
-                <small class="text-muted">Ordered : {{ \Carbon\Carbon::parse($details['created_at'])->diffForHumans() }}</small>
+                <br>
+                <br>
+                <!-- <small class="text-muted">Ordered :  \Carbon\Carbon::parse($details['created_at'])->diffForHumans()</small> -->
                 <!-- <hr> -->
                 <!-- Your Order will deliver by tomorrow evening. -->
                 <br>

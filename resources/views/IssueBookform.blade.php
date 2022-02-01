@@ -265,7 +265,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
       let oldDate = cal1;
 
       oldDate.setFullYear(oldDate.getFullYear() + parseInt(1));
-
+      console.log(oldDate.getDay());
+      console.log(oldDate.getMonth());
+    //   oldDate.setFullYear(oldDate.getFullYear() + parseInt(1));
+// 2022+1 = 2023
+// getDate() == day
+// getMonth() == month
+// getFullYear() == year
       
       document.getElementById("returnDate").textContent = oldDate;
       document.getElementById("returnDate1").setAttribute('value',oldDate);

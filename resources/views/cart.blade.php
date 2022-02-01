@@ -70,9 +70,20 @@
 </table>
 
 <div class="row m-3 p-2">
-    <div class="col d-flex justify-content-end">
-        <a href="{{ route('IssueBookInfo.form') }}" class="button px-4 py-2">&nbsp;&nbsp;Issue Book</a>
-    </div>
+    @if(session('cart') != null)
+        <div class="col d-flex justify-content-end">
+            <a href="{{ route('IssueBookInfo.form') }}" class="button px-4 py-2">&nbsp;&nbsp;Issue Book</a>
+        </div>
+    @else
+        <div class="col-md-12 text-center">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Info! </strong>Your cart is empty
+                <button type="button" class="close btn-danger" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true" class="f1">&times;</span>
+                </button>
+            </div>
+        </div>
+    @endif
 </div>
 
 <script type="text/javascript">
