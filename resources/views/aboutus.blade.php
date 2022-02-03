@@ -4,14 +4,14 @@
 
 <style>
   .aboutus-section {
-    padding: 20px 120px;
+    padding: 5px 40px;
   }
 
+  .dev-card,
   .aboutus-title {
     font-size: 40px;
     letter-spacing: 0;
     line-height: 32px;
-    margin: 0 0 39px;
     padding: 0 0 11px;
     position: relative;
     text-transform: uppercase;
@@ -87,7 +87,9 @@
   }
 
   .our-team {
+    margin: auto;
     padding: 0 0 40px;
+    max-width: 280px;
     background: #f9f9f9;
     text-align: center;
     overflow: hidden;
@@ -236,8 +238,8 @@
 
   <div class="container mb-5">
     <div class="row blog">
-      <h1 class="center mx-auto text-center py-4" style="color:#4e67ca;">Our Team Members</h1>
-      <p style="color:black; margin-left:200px; margin-right:200px;"> We are different. We were raised in various towns,
+      <h2 class="dev-card center mx-auto text-center py-4" style="color:#4e67ca;">Our Team Members</h2>
+      <p style="color:black;" class="px-4"> We are different. We were raised in various towns,
         in different families, we love different food.
         But we have a thing that is common. Our Passion for work and learning new everyday. We are a team, and also a
         family.</p>

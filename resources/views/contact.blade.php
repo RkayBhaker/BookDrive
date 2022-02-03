@@ -6,13 +6,12 @@
 	<style>
 .contact{
 		
-	padding-left: 200px;
+	/* padding-left: 200px; */
 	padding-bottom: 50px;
 }
 
-.contact-form{
-		
-		padding-right: 200px;
+#contact-form{
+    padding : 12px 50px;
 	}
 
 .file {
@@ -46,7 +45,7 @@ input[type=file]::file-selector-button {
     <div class="row">
 
         <!--Grid column-->
-        <div class="col-md-9 mb-md-0 mb-5">
+        <div class="col-md-12 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
                 <!--Grid row-->

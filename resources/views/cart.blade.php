@@ -1,5 +1,4 @@
 @extends('layouts.templateBD')
-
 <head>
     <style>
         tr > th{
@@ -19,6 +18,22 @@
             background-color:#7386D5;
             border: #4e67ca;
         }
+        .all-items{
+            width: 100%;
+            display: grid;
+            grid-template-columns : repeat(auto-fit, minmax(280px, 1fr));
+            grid-gap: 10px;
+        }
+        .all-items > a{
+            position: relative;
+            border : 1.1px ridge blue;
+            border-radius : 4px;
+        }
+        .all-items > a:hover{
+            border : 1.1px ridge #fff;
+            background : #4E67CA;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -26,13 +41,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
-    @if(session('success'))
-        <div class="alert alert-success">
-          {{ session('success') }}
-        </div> 
-    @endif
+    <div class="container">
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Info!</strong> {{ session('success') }}
+                <button type="button" class="close btn-danger" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true" class="f1">&times;</span>
+                </button>
+            </div>
+        @endif
+  </div>
 
-<table id="cart" class="table table-responsive table-bordered my-5 mx-3">
+<table id="cart" class="table table-responsive my-5 mx-3">
     <thead>
         <tr>
             <th>Title</th>
@@ -41,7 +61,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="border">
         
         @if(session('cart'))
             @foreach(session('cart') as $id => $details)
@@ -56,10 +76,11 @@
                         </div>
                     </td>
                     <td data-th="Price">{{ $details['desc'] }}</td>
-                    <td data-th="Quantity">
-                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" />
+                    <td data-th="Quantity" class="text-center">
+                        <input type="number" value="{{ $details['quantity'] }}" class="form-control quantity update-cart" style="display:none;" />
+                        <p> {{ $details['quantity'] }} </p>
                     </td>
-                    <td class="actions" data-th="">
+                    <td class="actions text-center" data-th="">
                         <button class="btn btn-sm remove-from-cart">Remove</i></button>
                         <!-- <button class="btn btn-danger btn-sm remove-from-cart"><i class="fa fa-trash-o"></i></button> -->
                     </td>
@@ -68,19 +89,28 @@
         @endif
     </tbody>
 </table>
-
-<div class="row m-3 p-2">
+<div class="row p-2 mx-3" style="margin-bottom : 70px;">
     @if(session('cart') != null)
-        <div class="col d-flex justify-content-end">
-            <a href="{{ route('IssueBookInfo.form') }}" class="button px-4 py-2">&nbsp;&nbsp;Issue Book</a>
+        <div class="col-md-12 d-flex justify-content-end text-center">
+            <a href="{{ route('IssueBookInfo.form') }}" class="button px-3 py-3">Issue Book</a>
         </div>
     @else
-        <div class="col-md-12 text-center">
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Info! </strong>Your cart is empty
-                <button type="button" class="close btn-danger" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true" class="f1">&times;</span>
-                </button>
+        <div class="col-md-12 my-5">
+            <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                <strong>Info! </strong>Your cart is empty.
+            </div>
+            <div class="my-3 border alert-secondary px-3 py-4 alert alert-dismissible fade show" role="alert">
+                <h6 class="text-primary pb-3">click to below category to go add books in cart.</h6>
+                    <div class="all-items border mx-auto text-center">
+                            <a class="p-3" href="{{ route('ncert.book') }}">NCERT Books </a>
+                            <a class="p-3" href="{{ route('cbse.book') }}">CBSE Books </a>
+                            <a class="p-3" href="#">ICSE Books </a>
+                            <a class="p-3" href="#">MSBTE Books </a>
+                    </div>
+                    <button type="button" class="close btn-danger" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" class="f1">&times;</span>
+                    </button>
+                <!-- </div> -->
             </div>
         </div>
     @endif

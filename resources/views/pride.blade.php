@@ -28,6 +28,19 @@
 .card-text {
   color:black;
 }
+
+@media only screen and (max-width: 768px){
+  .card {
+  margin-left:0px;
+  margin-right:0px;
+  background-color: transparent !important;
+}
+
+.card-margin {
+  margin-left:0px;
+  margin-right:0px;
+}
+}
 </style>
 </head>
 <body>

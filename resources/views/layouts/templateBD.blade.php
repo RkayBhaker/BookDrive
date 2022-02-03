@@ -231,6 +231,24 @@
             background: #6d7fcc !important;
             color: #fff !important;
         }
+
+        @media only screen and (max-width: 990px) {
+            #navbarSupportedContent ul{
+                display: block;
+            }
+            #navbarSupportedContent ul > li{
+                display: inline-block !important;
+            }
+        }
+
+        /* small device classes & ids*/
+        @media only screen and (min-width: 428px) {
+            #open-Sidebar,
+            #close-Sidebar{
+                display:none;
+            }
+        }
+        
         
         /* ---------------------------------------------------
             CONTENT STYLE
@@ -295,15 +313,50 @@
             #sidebarCollapse span {
                 display: none;
             }
-            }  
-              /* User Profile Links */
-              .user-profile{
+        }
+        @media only screen and (max-width: 428px) {
+            #sidebar12{
+                display: none;
+            }
+            .wrapper {
+                    display: block;
+                    align-items: unset;
+            }
+            #sidebar,
+            .sidebarCollapseBtn{
+                display:none;
+            }
+            #sidebar2{
+                text-align: center;
+            }
+            /* #navbarSupportedContent ul > li{
+                float: left !important;
+                display: block !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: 1px ridge red !important;
+            } */
+        }
+
+        /* User Profile Links */
+            .user-profile{
                   font-size: 16px;
                   border: none;
               }
+              .cart-dropdown,
               .user-dropdown{
                   position: relative;
                   display: inline-block;
+              }
+              .cart-dropdown-list{
+                  display: none;
+                  position: absolute;
+                  left: -163px;
+                  background-color: #f1f1f1;
+                  min-width: 263px;
+                  box-shadow: 0px 8px 16px 0px
+                  rgba(0, 0, 0, 0.2);
+                  z-index: 1;
               }
               .user-dropdown-list{
                   display: none;
@@ -314,22 +367,32 @@
                   rgba(0, 0, 0, 0.2);
                   z-index: 1;
               }
+              .cart-dropdown-list a,
               .user-dropdown-list a{
                   padding: 12px 16px;
                   text-decoration: none;
                   display: block;
               }
+              .cart-dropdown-list a:hover,
               .user-dropdown-list a:hover{
                   background-color:#6d7fcc;
+                  color : #fff;
               }
+              .cart-dropdown:hover .cart-dropdown-list,
               .user-dropdown:hover .user-dropdown-list{
                   display: block;
               }
-              
-        }      
-        
-        
-        @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+              #cart-button{
+                padding: 10px 3px !important;
+                height: default;
+                width: 40%;
+                background: #4e67ca;
+                color:white;
+              }
+              #cart-button:hover{
+                background-color: #4e67ca;
+              }
+            @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 
 
 
@@ -471,8 +534,7 @@ footer ul > li:hover::after{
     background : none;
 }
 
-
-    </style>
+</style>
 
 </head>
 
@@ -480,8 +542,8 @@ footer ul > li:hover::after{
 
     <div class="wrapper">
         <!-- Sidebar  -->
-        
-        <nav id="sidebar" class="tempsidebar" onclick="openMenu()" >
+        <nav id="sidebar" class="tempsidebar">
+            <div class="border d-flex flex-row-reverse"><button style="background:white; border:none;" id="close-Sidebar">X</button></div>
             <div class="sidebar-header" id="sidebar2" onclick="closeMenu()">
 
                 <h2><a href="/"> BookDrive</a></h2>
@@ -543,17 +605,22 @@ footer ul > li:hover::after{
 
             <nav class="navbar navbar-expand-lg right-top-menubar mt-1">
                 <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse"  class="btn">
+                    <!-- sidebar Collapse Button -->
+                    <button type="button" id="sidebarCollapse"  class="btn sidebarCollapseBtn">
                         <i class="fas fa-align-left"></i>
                         <span style="font-weight:bold;">Books Drive</span>
                     </button>
-                   
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- mobile device menu toggle button -->
+                    <button type="button" id="open-Sidebar" class="btn">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                   
+                    <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button> -->
+
+                    <div class="" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
                             
                                 @guest
@@ -571,10 +638,10 @@ footer ul > li:hover::after{
                                         <i class="fas fa-user"></i>
                                         {{ Auth::user()->name }}
                                     </a>
-                                    <div class="user-dropdown-list">
-                                    <a href="/userProfile">Your Profile</a>
-                                    <a href="{{ route('order.list') }}">Your Order</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <div class="user-dropdown-list p-3">
+                                        <a href="/userProfile">Your Profile</a>
+                                        <a href="{{ route('order.list') }}">Your Order</a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
@@ -588,40 +655,46 @@ footer ul > li:hover::after{
                                         
                                 @endguest
                                 
-                            <li class="nav-item">
-                                            <div class="dropdown">
-                                                <!-- <button type="button" class="btn text-primary border" id="btn" data-toggle="dropdown">
-                                                    <span style="font-size: 14px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart {{ count((array) session('cart')) }}</span>
-                                                </button> -->
-                                                <a href="{{ route('cart') }}" class="btn text-primary border px-3 py-2" id="btn">
+                                        <li class="nav-item  cart-dropdown">
+                                            <!-- <div class="dropdown"> -->
+                                                <a href="{{ route('cart') }}" class="btn text-primary border px-3 py-2" id="btn"  data-toggle="dropdown">
                                                     <span style="font-size: 14px; color:#4e67ca;"><i class="fa fa-shopping-cart" style="color:#4e67ca;" aria-hidden="true"></i>Cart <span class="rounded-circle border px-2 bg-#4e67ca text-white" style="background-color:#4e67ca;">{{ count((array) session('cart')) }}</span></span>
                                                 </a>
-                                                <!-- <div class="dropdown-menu">
-                                                    <div class="row total-header-section">
-                                                        <div class="col-lg-6 col-sm-6 col-6">
-                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>{{ count((array) session('cart')) }}
-                                                        </div>
-                                                    </div>
-                                                    @if(session('cart'))
-                                                        @foreach(session('cart') as $id => $details)
-                                                            <div class="row cart-detail">
-                                                                <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
-                                                                    <img src="{{ $details['image'] }}" />
-                                                                </div>
-                                                                <div class="col-lg-8 col-sm-8 col-8 cart-detail-product">
-                                                                    <p>{{ $details['title'] }}</p>
+                                                <!-- <div class="dropdown-menu"> -->
+                                                        <div class="cart-dropdown-list p-3">
+                                                            <div class="row total-header-section text-center">
+                                                                <div class="col-lg-12 col-sm-12 col-12">
+                                                                <span class="px-2">Total Items : </span><span class="px-2">{{ count((array) session('cart')) }}</span>
                                                                 </div>
                                                             </div>
-                                                        @endforeach
-                                                    @endif
-                                                    <div class="row">
-                                                        <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
-                                                            <a href="{{ route('cart') }}" class="btn btn-primary">View all</a>
+                                                            <hr>
+                                                            @if(session('cart'))
+                                                                <?php $cartId = 0; ?>
+                                                                @foreach(session('cart') as $id => $details)
+                                                                    <div class="row p-2">
+                                                                        <div class="col-lg-2 col-sm-2 col-2 border p-2">
+                                                                            {{ ++$cartId }}.
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-sm-6 col-6 border p-2">
+                                                                            {{ $details['title'] }}
+                                                                        </div>
+                                                                        <div class="col-lg-4 col-sm-4 col-4 border p-2">
+                                                                            @if($details['language'] === 'Hi')
+                                                                                Hindi
+                                                                            @else
+                                                                                English
+                                                                            @endif
+                                                                        </div>
+                                                                    </div>
+                                                                @endforeach
+                                                                <a href="{{ route('cart') }}" id="cart-button" class="btn btn-primary btn-sm">View all</a>
+                                                            @else
+                                                                <h6 class="p-3 alert alert-light" role="alert">Cart is empty!</h6>
+                                                                <p class="p-1 text-primary" style="font-size: 12px !important;"><strong class="text-primary">Info! </strong><a class="font-weight-bold" style="all:unset; cursor:pointer;" href="{{ route('cart') }}">Click here</a>  to open cart</p>
+                                                            @endif
+
                                                         </div>
-                                                    </div>
-                                                </div> -->
-                                            </div>
-                            </li>
+                                        </li>
                         </ul>
                     </div>
                 </div>
@@ -698,17 +771,24 @@ footer ul > li:hover::after{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 
      <script type="text/javascript">
-
-// function openMenu() {
-//       document.getElementById("sidebar").style.width = "250px";
-//     }
-//     function closeMenu() {
-//       document.getElementById("sidebar2").style.width = "0";
-//     }
          $(document).ready(function () {
              $('#sidebarCollapse').on('click', function () {
                  $('#sidebar').toggleClass('active');
                  $('#sidebar12').toggleClass('active');
+             });
+             $('#close-Sidebar').on('click', function(){
+                 $('#sidebar').css("display","none");
+             });
+             $('#open-Sidebar').on('click', function(){
+                 $('#sidebar').add('span').css({
+                    "display" : "block",
+                    "position": "absolute !important",
+                    "min-width": "100%",
+                    "max-height": "100%",
+                    "top": "0",
+                    "left": "0",
+                    "z-index": "1"
+                 });
              });
          });
      </script>

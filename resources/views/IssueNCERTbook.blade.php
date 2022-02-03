@@ -42,16 +42,20 @@
 
 <!-- menu cart button section start -->
 
-@if(session('success'))
-        <div class="alert alert-success">
-          {{ session('success') }}
-        </div> 
-@endif
+  <div class="container">
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Info!</strong> {{ session('success') }}
+            <button type="button" class="close btn-danger" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" class="f1">&times;</span>
+            </button>
+        </div>
+    @endif
+  </div>
 
 <!-- menu cart button section end -->
 
   <div class="card_container">
-
   <?php
     $id = 0;
   ?>
@@ -62,8 +66,6 @@
           <div class="card-body">
             <h5 class="card-title"> {{$value->title}} </h5>
             <p class="card-text"> {{$value->desc}} </p>
-            <!-- <p class="card-text"> {{$value->status}} </p>
-            <p class="card-text"> {{$value->token}} </p> -->
           </div>
           <div class="row container-fluid text-center mx-auto py-2">
               <div class="col-md-5 card-text text-primaryr">
@@ -82,14 +84,8 @@
           <div class="card-footer bg-white">
             <small class="">
             @if($NCERT_total_book[$id] > 0)
-              <!-- <a href="{{ route('IssueBookInfo.form') }}" class="btn btn-outline-primary"> Issue Book</a> -->
-              <!-- <button type="submit" class="btn btn-outline-primary">Issue Book</button> -->
-              <!-- <p class="btn-holder"> -->
                 <a href="{{ route('add.to.cart', $value->id) }}" class="btn btn-warning text-center" role="button">Add to cart</a>
-              <!-- </p> -->
-              
             @else
-              <!-- <a href="{{ route('IssueBookInfo.form') }}" class="btn btn-outline-primary" style="pointer-events: none;"> Issue Book</a> -->
               <a href="{{ route('add.to.cart', $value->id) }}" class="btn btn-warning text-center" style="pointer-events: none;" role="button">Add to cart</a>
             @endif
             </small>

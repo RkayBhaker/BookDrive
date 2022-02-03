@@ -47,7 +47,8 @@ class ProductController extends Controller
                     "token" => $product->token,
                     "unique_id" => $product->token,
                     "desc" => $product->desc,
-                    "image" => $product->image
+                    "image" => $product->image,
+                    "language" => $product->Language
                 ];
             }
           

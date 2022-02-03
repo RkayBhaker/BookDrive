@@ -6,16 +6,16 @@
 	<style>
 .contact{
 		
-	padding-left: 200px;
+	/* padding-left: 200px; */
 	padding-bottom: 50px;
+    
 }
 
-.contact-form{
-		
-		padding-right: 200px;
-	}
+#contact-form{
+    padding : 12px 80px;
+}
 
-    .error
+.error
 {
   color: red;
   size: 80%
@@ -61,7 +61,7 @@
 <body>
 <!--Section: Contact v.2-->
 <div class="contact">
-<section class="mb-4">
+<section class="mb-4 ">
 	<div class="contact-form">
         <!--Section heading-->
         <h1 style="text-align:center; color:#4e67ca;">Donate Book</h1>
@@ -79,7 +79,7 @@
     <div class="row">
 
         <!--Grid column-->
-        <div class="col-md-9 mb-md-0 mb-5">
+        <div class="col-md-12 mb-md-0 mb-5">
             <form id="contact-form" name="contact-form" action="{{ Route('donar.details') }}" method="POST">
                 @csrf
                 <!--Grid row-->
