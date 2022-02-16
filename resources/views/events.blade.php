@@ -3,12 +3,12 @@
 @section('mainContent')
 <html>
 <head>
-	<style>
-.event_cards {
-    /* margin-left:80px;
+<style>
+/* .event_cards {
+    margin-left:80px;
     margin-top:80px;
-    margin-bottom:80px; */
-}
+    margin-bottom:80px;
+} */
 
 p{
     color:black;
@@ -70,7 +70,7 @@ p{
 <div class="card-deck mx-auto py-4 px-2" id="card-deck">
 
   <!-- card 1 -->
-  <div class="card img-thumbnail" style="max-width: 430px;">
+  <div class="card img-thumbnail mx-auto" style="max-width: 280px;">
     <img class="card-img-top" height="250px" src="img8.png" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Little Angels Public School</h5>
@@ -82,7 +82,7 @@ p{
   </div>
 
   <!-- card 2 -->
-  <div class="card img-thumbnail" style="max-width: 430px;">
+  <div class="card img-thumbnail mx-auto" style="max-width: 280px;">
     <img class="card-img-top" height="250px" src="img7.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">V.B.R English Medium School</h5>
@@ -94,7 +94,7 @@ p{
   </div>
 
   <!-- card 3 -->
-  <div class="card img-thumbnail" style="max-width: 430px;">
+  <div class="card img-thumbnail mx-auto" style="max-width: 280px;">
     <img class="card-img-top" height="250px" src="img6.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">St.Joseph Secondary School</h5>
@@ -106,7 +106,7 @@ p{
   </div>
 
   <!-- card 4 -->
-  <div class="card img-thumbnail" style="max-width: 430px;">
+  <div class="card img-thumbnail mx-auto" style="max-width: 280px;">
     <img class="card-img-top" height="250px" src="img9.jpg" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">Pioneer School for Girls</h5>
@@ -118,90 +118,6 @@ p{
   </div>
 </div>
 <!-- Event Card section end -->
-
-<!-- <div class="event_cards">
-  <div class="card-deck">
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="img6.jpg" class="card-img" alt="..." height="130px" width="200px" style="margin-top:38px">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Little Angels Public School</h5>
-            <time datetime="2020-05-25 12:00:00">
-                <i class="fas fa-calendar-alt mr-2"></i>Mon, Feb 11th 2019
-              </time>
-                        <br>
-                        Bangalore, Karnataka
-            <p>100 sets of textbooks of Standard I to V were disbruted. The smile on the face of the kids was worth a billions. Thanking Mr.Raman, Principal of Little Angels Public School for reaching out to us and giving us an honor to help this childrens.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="img7.jpg" class="card-img" alt="..." height="130px" width="200px" style="margin-top:38px">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">V.B.R English Medium School</h5>
-            <time datetime="2020-05-25 12:00:00">
-                <i class="fas fa-calendar-alt mr-2"></i>Fri, May 17th 2019
-              </time>
-                        <br>
-                        Vadodara, Gujarat
-            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-deck">
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="img8.png" class="card-img" alt="..." height="130px" width="200px" style="margin-top:38px">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">St.Joseph Secondary School</h5>
-            <time datetime="2020-05-25 12:00:00">
-                <i class="fas fa-calendar-alt mr-2"></i>Mon, Aug 12th 2019
-              </time>
-                <br>
-                        Sant Nagar, Delhi
-            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="img9.jpg" class="card-img" alt="..." height="130px" width="200px" style="margin-top:38px">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">Pioneer School for Girls</h5>
-            <time datetime="2018-05-25 12:00:00">
-                <i class="fas fa-calendar-alt mr-2"></i>Wed, Nov 20th 2019
-              </time><br>
-                        Kalbadevi, Mumbai, Maharashtra
-            <p>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
 
 </body>
 </html>

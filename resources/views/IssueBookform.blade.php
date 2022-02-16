@@ -10,14 +10,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .contact{
 		
-	padding-left: 200px;
+	/* padding-left: 200px; */
 	padding-bottom: 50px;
 }
 
-.contact-form{
-		
-		padding-right: 200px;
-	}
+#contact-form{
+    padding : 12px 80px;
+}
 
     .error
 {
@@ -83,7 +82,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
     <div class="row">
         <!--Grid column-->
-        <div class="col-md-9 mb-md-0 mb-5">
+        <div class="col-md-12 mb-md-0 mb-5">
             <form id="contact-form" action="{{Route('issuebook.form')}}" method="POST">
                 @csrf
                     <!--Grid column-->
@@ -202,13 +201,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <!--Grid row-->
                 <br>
 
-                <input type="checkbox" value="agreement signed I" name="agreement_I" ><label> I have I have read and agreed to <a href="terms_conds" style="color:blue;">Terms and Condition <i class="fa fa-link icon"></i></a></label><br>
+                <input type="checkbox" value="agreement signed I" name="agreement_I" ><label>&nbsp;I have read and agreed to <a href="terms_conds" style="color:blue;">Terms and Condition <i class="fa fa-link icon"></i></a></label><br>
                         @error('agreement_I')
                             <div class="alert alert-warning" role="alert">
                                 {{$message}}
                             </div>
                         @enderror
-                <input type="checkbox" value="agreement signed II" name="agreement_II" ><label> I have read and agreed to <a href="return" style="color:blue;"> Return Policy <i class="fa fa-link icon"></i></a></label>
+                <input type="checkbox" value="agreement signed II" name="agreement_II" ><label>&nbsp;I have read and agreed to <a href="return" style="color:blue;"> Return Policy <i class="fa fa-link icon"></i></a></label>
                         @error('agreement_II')
                             <div class="alert alert-warning" role="alert">
                                 {{$message}}

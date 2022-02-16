@@ -17,28 +17,28 @@ class issueBookController extends Controller
 {
     //
     public function issueBook(Request $request){
-        // $validateData = $request->validate([
-        //     "fname" => "required|min:4",
-        //     "lname" => "min:2",
-        //     "phno" => "required|digits:10",
-        //     "email" => "required|email",
-        //     "issuedate" => "required",
-        //     // "returndate" => "required",
-        //     "address" => "required|min:10",
-        //     "agreement_I" => "required",
-        //     "agreement_II" => "required"
-        // ],
-        // [
-        //     "fname" => "Please enter your first name",
-        //     "lname" => "Last name should be atleast minimum 2 character",
-        //     "phno" => "Phone number should have at least 10 digits",
-        //     "email" => "Please enter your correct email address",
-        //     "issuedate" => "Issue date required",
-        //     // "returndate" => "Return date required",
-        //     "address" => "Enter your correct address",
-        //     "agreement_I" => "Field required",
-        //     "agreement_II" => "Field required"
-        // ]);
+        $validateData = $request->validate([
+            "fname" => "required|min:4",
+            "lname" => "min:2",
+            "phno" => "required|digits:10",
+            "email" => "required|email",
+            "issuedate" => "required",
+            // "returndate" => "required",
+            "address" => "required|min:10",
+            "agreement_I" => "required",
+            "agreement_II" => "required"
+        ],
+        [
+            "fname" => "Please enter your first name",
+            "lname" => "Last name should be atleast minimum 2 character",
+            "phno" => "Phone number should have at least 10 digits",
+            "email" => "Please enter your correct email address",
+            "issuedate" => "Issue date required",
+            // "returndate" => "Return date required",
+            "address" => "Enter your correct address",
+            "agreement_I" => "Field required",
+            "agreement_II" => "Field required"
+        ]);
 
         $fname = $request->fname;
         $lname = $request->lname;

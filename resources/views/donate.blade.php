@@ -229,7 +229,22 @@
                     <div class="col-md-12">
                         <div class="md-form">
 							<label for="message">Book Condition</label>
-                            <textarea type="text" id="message" name="message" rows="3" class="form-control md-textarea" placeholder="..."></textarea>
+                            <div class="form-check">
+                                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="Good Condition" name="option1" aria-label="...">
+                                Good Condition 
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="Good Pages but Poor Binding" name="option2" aria-label="...">
+                                Good Pages but Poor Binding 
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="Good Pages but Poor Cover" name="option3" aria-label="...">
+                                Good Pages but Poor Cover 
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="Good Pages but No Cover" name="option4" aria-label="...">
+                                Good Pages but No Cover
+                            </div>
                             <br>
                             
                                 @error('message')
@@ -269,28 +284,7 @@
                     </div>
                 </div>
     </form>
-        <!--Grid column-->
-<!-- Modal -->
-<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Successful!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Details Recorded! We would soon contact you!<br> Thank You for Donating!
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-        
-    </div>
+</div>
 
 </section>
 </div>

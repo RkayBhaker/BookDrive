@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\demo;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,7 @@ Route::get('/demoEmail', function(){
     return new demo();
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\updateDonatedBooksDetials::class, 'getBannerImagesForRoot']);
 
 Route::get('/login', function () {
     return view('login');
@@ -90,6 +89,11 @@ Route::get('/web', function () {
     return view('layouts.app');
 });
 
+// books route
+Route::get('/book-routes', function(){
+    return view('book-route');
+})->name('book.route');
+
 Route::get('/BookIssueform', function(){
     return view('IssueBookform');
 })->middleware('auth')->name('IssueBookInfo.form');
@@ -123,11 +127,33 @@ Route::patch('update-cart', [App\Http\Controllers\ProductController::class, 'upd
 Route::delete('remove-from-cart', [App\Http\Controllers\ProductController::class, 'remove'])->name('remove.from.cart');
 
 
-// order email
-// Route::get('email', function(){
-//     Mail::to('email@email.com')->send(new OrderShipped());
-//     return new OrderShipped();
-// });
+
+// ==========================================================================
+// ==========================================================================
+// ==========================================================================
+// ==========================================================================
+// Admin Panel
+
+Route::get('/Admin-Panel', [App\Http\Controllers\updateDonatedBooksDetials::class, 'adminPanel'])->middleware('auth')->name('admin.panel');
+
+// Route for update donated book doc
+Route::post('/updateBookDoc', [App\Http\Controllers\updateDonatedBooksDetials::class, 'updateForm'])->middleware('auth')->name('update.book.detials');
+
+// available books route
+Route::get('/Donated-Books-Collections', [App\Http\Controllers\updateDonatedBooksDetials::class, 'index'])->middleware('auth')->name('available.book.detials');
+
+// get all detials of registered users
+Route::get('/User-display', [App\Http\Controllers\updateDonatedBooksDetials::class, 'userDetails'])->middleware('auth')->name('users.detials');
+
+// get all detials of orders
+Route::get('/all-orders', [App\Http\Controllers\updateDonatedBooksDetials::class, 'allOrders'])->middleware('auth')->name('orders.detials');
+
+// update carousel
+Route::get('/Banner-Update', [App\Http\Controllers\updateDonatedBooksDetials::class, 'getBannerImages'])->middleware('auth')->name('get.banner.images');
+// update carousel
+Route::post('/Banner-Update', [App\Http\Controllers\updateDonatedBooksDetials::class, 'updateBanner'])->middleware('auth')->name('Banner.Update');
+
+
 
 // verify email address
 Auth::routes(['verify' => true]);

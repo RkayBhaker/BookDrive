@@ -10,6 +10,6 @@ class donated_Book extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id';
-        protected $keyType = 'int';
+    protected $keyType = 'int';
     protected $connection = 'mongodb';
 }

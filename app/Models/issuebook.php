@@ -9,8 +9,8 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class issuebook extends Model
 {
     use HasFactory;
-    protected $connection = 'mongodb';
 
+    protected $connection = 'mongodb';
     protected $fillable = [
         'fullname',
         'orderId',

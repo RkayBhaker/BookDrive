@@ -4,7 +4,7 @@
 
 <style>
   .aboutus-section {
-    padding: 5px 40px;
+    padding: 5px 5px;
   }
 
   .dev-card,
@@ -210,10 +210,10 @@
 
   <div class="aboutus-section">
     <div class="container">
+    <h2 class="aboutus-title">About Us</h2>
       <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-6 col-xs-12">
           <div class="aboutus">
-            <h2 class="aboutus-title">About Us</h2>
             <p class="aboutus-text">India is advancing towards development but illiteracy continues to plague a large
               section of the people in India. Lakhs of children don’t get an opportunity to go to school or attend
               higher qualifications due to severe financial problems. Even if these students attend government schools
@@ -223,8 +223,8 @@
             </p>
           </div>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <p class="aboutus-text"><br><br><br><br>We are students of IBM Adance Diploma Course undergoing an Internship
+        <div class="col-md-6 col-xs-12">
+          <p class="aboutus-text">We are students of IBM Adance Diploma Course undergoing an Internship
             under IBM. This website is a project work for the Internship of Group 44 OJT under the guidance of Edunet
             Mentor and IBM Mentor. The objective of this project is to create a portal which allows users to donate
             their old books for the unprivileged student and those books could be issued to those students in need, free
@@ -271,7 +271,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                   <div class="our-team">
                     <div class="pic">
-                      <img src="https://i.ibb.co/L8Pj1mg/o6EuTCT6.jpg">
+                      <img src="sarwan.jpeg">
                     </div>
                     <div class="team-content">
                       <h3 class="title">Shrawan Sharma</h3>
@@ -282,7 +282,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                   <div class="our-team">
                     <div class="pic">
-                      <img src="IMG_20181219_161047.jpg">
+                      <img src="IMG_20181219_161047.jpeg">
                     </div>
                     <div class="team-content">
                       <h3 class="title">Rakesh<br><br></h3>

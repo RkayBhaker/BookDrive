@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model;
-
-class order extends Model
+class BannerImages extends Model
 {
     use HasFactory;
-    protected $dates = ['created_at', 'updated_at', 'datetime'];
-    protected $connection = 'mongodb';
 }

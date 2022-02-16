@@ -11,10 +11,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class User extends Authenticatable implements MustVerifyEmail,AuthenticatableContract
+class User extends Authenticatable implements MustVerifyEmail, AuthenticatableContract
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $connection = 'mongodb';
 
     /**
      * The attributes that are mass assignable.
