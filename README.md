@@ -29,7 +29,7 @@ Run app locally in browser
 ```
 
 ## MongoDB
-[![MongoDB](https://lh3.googleusercontent.com/R7dw6yMDqzWxQgiqslkxTnP-3e1wNFCLXNhMaSvMY-6Sutf3saejIW0FDzK3cUU0ItbD-c-ma52shXCE4WmjRARETTorCbDhggJANVlaxxLyxW3M1fNpkMvj_1Uq5a0SDsHEVy88_NHdidpRVXt1dX--y_bsvKy0nS8l2p0F5hbZlb9F1nQjvn4-PDszR3wjLhij3S6FZVl-T4lv5gMsRHE17SHuNBuMP82Gveg35BBY84bxqbAjjGog7sNXJ2BQe1CZaAWKfCT2Ly3uBGfcEUWNiGFBAk3jhvJW86AeEpI2vbuZ5XJnE3odY2q-jtZw3dARmMZbzNOARkSeg8pxQga0eJbV7K81TS-KETXfIXq3nIAx0up7Nplhg7A9Gy5HMiUlheo8Y0DPoOVFQ54XGC5hmR3z053jKRPAdhY5Opd-QzFa8n3hwizOQThh3Nx9--w-A5MbWgk8mZeknapncXEFGp5Tdj_9PWmUD4E9auio40B8qtSobqnAqPJjDayreAoGMVdcPDElPZk5YQTZTjPZBvMxVyFW7uOhqY-PuAj4THFILk9GHCmAiqebziSUnBAhaqV4PDFRHUl5kkQorTM0mP6RIzVhZOQvtcg6Gb0_X6QmR5NF76FVK16WKaUJviv1GUi5ZE35k_YU4VBnAtijCp6ekg1OGU0Z8TWqqCAmHwFrtC8WXiqe2VA2uXjNUUPbhOK4g7LhrpmgcziocaU=w433-h116-no?authuser=0)](https://account.mongodb.com/account/login?_ga=2.27186813.1330840700.1645023003-106929829.1643112359)
+[![MongoDB](mongodb.png)](https://account.mongodb.com/account/login?_ga=2.27186813.1330840700.1645023003-106929829.1643112359)
 
 - [Documentation](https://docs.mongodb.com/)
 - [Sign Up | Login](https://account.mongodb.com/account/login?_ga=2.27186813.1330840700.1645023003-106929829.1643112359)
@@ -76,7 +76,7 @@ Run app locally in browser
 - Finally, Open your app
 - [Open app](http://stark-lake-68051.herokuapp.com/)
 
-[![app](https://lh3.googleusercontent.com/-GQ2_vpBYiivBqfIz39fzLG0uQhKwCCbwio_EBpfC2vrXgl5mIRfNtbqXwXpnv6YLAZ7VgvOfmJUaTcYC0SX1u09AmllcgIL9FWH8gYXhWJyGv5e3AYiqCQ1tYY8QMY0scE6d642BOcuG2Pjk-eXjvM79DGZBBKpKfgXgrMWmAllr5ivySxHF0aRs37qiQw9HccT9ACFkap2XZmqWF-peJVTv_aKDHjgF4cpVk8fSn86dvBf2vrdiR7_WduyvqyrXdjwRL9C2Oqi-X8e_WxsGGqZLNDol9oS5DvopRd8kVoSbWgrvEjoJZ0Lhp_KSilP4raIT9WpCvlKcRt8v96dCGt-WoUPTqF1X22JER10bbsJWQ8_60qFI8Q7rZnDzTq8HUU1nKNnhrcJqfg2cEPLLPp51FwIbrdUBV_5Y_K_9hL97Okrzk6yi-d5PBoip-xF0SuMlVNro7bnZj9bgPpzWpuIaNjHvy12symB72OZEVAeiuEjdv8Wop8qy3hhOXf2iUc1UhMBcK6UhyV3IVKlqfcVO4_5FaPCXiCK_28vZh9eN-pyR5_t3LJ0bq4yTRLQAk5CfCMmfLkm8pXgVfFOVWH4UhDYsHtG-Iad_3V7ouDdbNEHbW7AvaYz1ha2pTt1-Zu1iSlzVbAsMwP1xgA0QNfGab35NsDBb_0oPFgMXbaXo0lU5Dtu_hapk5Ft_y30AlYo7BZqY1vp2E9OOoaKMOc=w1190-h665-no?authuser=0)](http://stark-lake-68051.herokuapp.com/)
+[![app](HOME.PNG)](http://stark-lake-68051.herokuapp.com/)
 
 ## 🛠 Skills
 Javascript, HTML, CSS, Bootstrap, PHP, Laravel, MongoDB(Database)
