@@ -49,6 +49,17 @@
 
     <h1 class="text-center blue 30% ">CBSC BOOKS</h1>
 
+    <div class="container">
+    @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Info!</strong> {{ session('success') }}
+            <button type="button" class="close btn-danger" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" class="f1">&times;</span>
+            </button>
+        </div>
+    @endif
+  </div>
+
 
     <div class="card_container">
 

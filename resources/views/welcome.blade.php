@@ -62,9 +62,15 @@
             </ol>
             <div class="carousel-inner">
                 @foreach($all_banner as $banner)
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="{{ $banner->image_name }}" alt="{{ $banner->image_name }}">
-                    </div>
+                    @if(file_exists($banner->image_name))
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ $banner->image_name }}" alt="{{ $banner->image_name }}">
+                        </div>
+                    @else
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="img5.png" alt="img5.png">
+                        </div>
+                    @endif
                 @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -1,66 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# [BookDrive](http://stark-lake-68051.herokuapp.com/)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web application, where those who have the course books might donate, & those who need them will order. Now we would create a channel to pick up the books from donor & also deliver it to the needful.
 
-## About Laravel
+## Installation
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Open project in Visual Code or use below command to open in installed editor
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```bash
+  $ code .
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Install additional dependency using terminal
 
-## Learning Laravel
+```bash
+  $ composer upgrade
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+After successfully finish above command use below command to run app
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+  $ php artisan serve
+```
 
-## Laravel Sponsors
+Run app locally in browser
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```bash
+  http://127.0.0.1:8000/
+```
 
-### Premium Partners
+## MongoDB
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
+[![MongoDB](mongodb.png)](https://account.mongodb.com/account/login?_ga=2.27186813.1330840700.1645023003-106929829.1643112359)
 
-## Contributing
+-   [Documentation](https://docs.mongodb.com/)
+-   [Sign Up | Login](https://account.mongodb.com/account/login?_ga=2.27186813.1330840700.1645023003-106929829.1643112359)
+-   After create cluster connect laravel app using mongodb credentials
+-   run blew commands to migrate documents
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```bash
+      $ php artisan migrate
+    ```
 
-## Code of Conduct
+-   Check the status of above command
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+      $ php artisan migrate:status
+    ```
 
-## Security Vulnerabilities
+-   [Laravel database](https://laravel.com/docs/7.x/database)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Host App on [Heroku](https://dashboard.heroku.com/)
 
-## License
+-   [Heroku](https://dashboard.heroku.com/) Refrence
+-   [Sign Up | Login](https://id.heroku.com/login)
+-   Download [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli) in you local PC
+-   After successfully install login in [Heroku](https://dashboard.heroku.com/) using CLI
+-   Open Command Line (CMD) and run below command to login
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+      $ heroku login
+    ```
+
+-   After login create app on heroku and push all local code to the heroku app
+
+    ```bash
+      $ heroku create app (name of app)
+      $ git init
+      $ git add .
+      $ git commit -m "commit message"
+      $ git push heroku master
+    ```
+
+-   Check the dashboard on [Heroku Dashboard](https://dashboard.heroku.com/apps)
+-   To run this project, you will need to add the following environment variables to your .env file
+
+    -   `APP_KEY`
+    -   `APP_DEBUG`
+    -   `APP_NAME`
+
+-   Select your app and update your env by click to [Settings](https://dashboard.heroku.com/apps/stark-lake-68051/settings) -> Config Vars
+-   Finally, Open your app
+-   [Open app](http://stark-lake-68051.herokuapp.com/)
+
+[![app](HOME.PNG)](http://stark-lake-68051.herokuapp.com/)
+
+## 🛠 Skills
+
+Javascript, HTML, CSS, Bootstrap, PHP, Laravel, MongoDB(Database)
+
+## Contributors
+
+-   [RAKESH](https://github.com/RkayBhaker)
+-   [Shuaib](https://github.com/shuaib71)
+-   [Pooja Hatankar](https://github.com/poojahatankar15)
+-   [Sarwan Kumar](https://github.com/shrawan632)

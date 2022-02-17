@@ -6,9 +6,19 @@
             {{session('success')}}
         </div>
       @endif
+      @if(Auth::user()->userType === 1)
+        <div class="alert alert-success" role="alert">
+            You are logged in as a Admin. &nbsp;&nbsp;&nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a class="p-1 rounded bg-success text-white" href="{{ route('admin.panel') }}">CLICK HERE</a> to redirect to ADMIN PANEL
+        </div>
+      @endif
     <div class="row border p-3">
         <div class="col-md-4 text-center">
-            <img id="user_profile_image" src="{{ Auth::user()->image_path }}" class="img-thumbnail rounded" height="250" width="250" alt="demo">
+            <!-- <img id="user_profile_image" src="{{ Auth::user()->image_path }}" class="img-thumbnail rounded" height="250" width="250" alt="demo"> -->
+            @if(Auth::user()->image_path)
+              <img id="user_profile_image" src="{{ Auth::user()->image_path }}" class="rounded img-fluid" style="height: 200px;" alt="demo">
+            @else
+              <img id="user_profile_image" src="USER.png" class="rounded img-fluid" style="height: 200px;" alt="demo">
+            @endif
                 <br>
             {{ Auth::user()->name }}
         </div>

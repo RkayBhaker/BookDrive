@@ -39,7 +39,7 @@
 
     <nav class="navbar navbar-light bg-secondary bg-opacity-25">
         <div class="container">
-            <a class="navbar-brand"><span class="h2 text-primary">BookDrive</span></a>
+            <a class="navbar-brand" href="/"><span class="h2 text-primary">BookDrive</span></a>
             <a class="btn btn-outline-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
@@ -53,7 +53,11 @@
     <!-- user profile -->
     <div class="row container mx-auto shadow p-3 mb-5 mt-3 bg-body rounded">
         <div class="col-md-4 text-center ">
-            <img id="user_profile_image" src="{{ Auth::user()->image_path }}" class="rounded img-fluid" style="height: 200px;" alt="demo">
+        @if(Auth::user()->image_path)
+          <img id="user_profile_image" src="{{ Auth::user()->image_path }}" class="rounded img-fluid" style="height: 200px;" alt="demo">
+        @else
+          <img id="user_profile_image" src="USER.png" class="rounded img-fluid" style="height: 200px;" alt="demo">
+        @endif
                 <br>
             {{ Auth::user()->name }}
         </div>

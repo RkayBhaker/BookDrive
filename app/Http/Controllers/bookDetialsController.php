@@ -128,6 +128,7 @@ class bookDetialsController extends Controller
                 ->where('category', $data[0])
                 ->where('Language', $data[1])
                 ->where('board', $data[2])
+                ->where('status', true)
                 ->first();
 
                 $all_total_book = donated_Book::all()
@@ -137,8 +138,13 @@ class bookDetialsController extends Controller
                 ->where('status', true)
                 ->count();
 
-                array_push($CBSE_data, $all_sorted_data);
-                array_push($CBSE_total_book, $all_total_book);
+                // array_push($CBSE_data, $all_sorted_data);
+                // array_push($CBSE_total_book, $all_total_book);
+
+                if($all_sorted_data != null){
+                    array_push($CBSE_data, $all_sorted_data);
+                    array_push($CBSE_total_book, $all_total_book);
+                }
         }
 
         return view('IssueCBSEbook', [
