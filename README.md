@@ -1,8 +1,10 @@
 # [BookDrive](http://stark-lake-68051.herokuapp.com/)
 
-### [GitHUB](https://github.com/RkayBhaker/BookDrive) CODE
-
 A web application, where those who have the course books might donate, & those who need them will order. Now we would create a channel to pick up the books from donor & also deliver it to the needful.
+
+## CODE
+
+-   [GitHUB](https://github.com/RkayBhaker/BookDrive)
 
 ## Installation
 
